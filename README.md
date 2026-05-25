@@ -12,7 +12,7 @@ permalink: /
 > **quote?:**[insert quote here lol]
 
 <p align="center">
-  <img src="assets/images/hero-cyan.png" alt="Architecture Banner" width="100%" style="border-radius: 8px; border: 2px solid #00f0ff;">
+  <img src="assets/images/hero-cyan.png" alt="BANNER" width="100%" style="border-radius: 8px; border: 2px solid #00f0ff;">
 </p>
 
 ## 🚀 Core Expertise

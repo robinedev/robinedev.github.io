@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Home
-permalink: /
+title: readme
+permalink: /doc/readme
 ---
 
 # Welcome!

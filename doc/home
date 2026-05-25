@@ -35,8 +35,8 @@ permalink: /
 
 | Section | Description 
 | :--- | :--- |
-| [**👤 About Me**](/profile/)  | background | [View Profile](/profile) 
-| [**🗣️ README.md**](/README/) | get to know how i work | [View ReadMe](/README) 
-| [**📁 Portfolio**](/portfolio/) | Deep dives into architecture, migrations, and open-source contributions. 
-| [**✍️ Blog**](/blog/) | tips and tricks , news in IT space, and reactions
-| [**📬 Contact**](/contact/) | Let's connect for advisory, or networking.
+| [**👤 About Me**](/doc/profile/)  | background | [View Profile](/profile) 
+| [**🗣️ README.md**](/doc/README/) | get to know how i work | [View ReadMe](/README) 
+| [**📁 Portfolio**](/doc/portfolio/) | Deep dives into architecture, migrations, and open-source contributions. 
+| [**✍️ Blog**](/doc/blog/) | tips and tricks , news in IT space, and reactions
+| [**📬 Contact**](/doc/contact/) | Let's connect for advisory, or networking.

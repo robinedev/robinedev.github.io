@@ -12,8 +12,6 @@ permalink: /doc/guestbook/
 > `💡 Protocol:` Logging in with your GitHub account allows you to comment, leave reactions, and track discussions! Please follow [Github T.O.S.](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) when posting!
 
 ***
-
-<!-- PASTE YOUR CUSTOM GISCUS SCRIPT BLOCK DIRECTLY BELOW THIS LINE -->
 <script src="https://giscus.app/client.js"
         data-repo="robinedev/robinedev.github.io"
         data-repo-id="R_kgDOPelsQg"

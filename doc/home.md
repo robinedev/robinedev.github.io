@@ -23,7 +23,7 @@ permalink: /
   Global macOS & Windows orchestration (`Jamf`, `Microsoft Intune`, `Rippling`, `WorkspaceOne`).
   
 * ### **Identity & Access Management**
-  Enterprise identity infrastructure and employee/device lifecycle management (`Okta` and `Rippling`). 
+  Enterprise identity infrastructure and employee/device lifecycle management (`Okta` and `Rippling`) plugging into HRIS Tools (`Workday` and `SequoiaOne`). 
   
 * ### **Compliance & Security**
   SOC 2 Type 1 & Type 2 readiness using security monitoring software (`Vanta`).

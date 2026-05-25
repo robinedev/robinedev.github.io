@@ -9,10 +9,19 @@ permalink: /
 
 ---
 
-> **quote?:**[insert quote here lol]
+<table width="100%" style="background-color: #1a1f2c; border-left: 5px solid #00f0ff; border-collapse: collapse; border-radius: 4px;">
+  <tr>
+    <td style="padding: 15px; border: none;">
+      <span style="color: #00f0ff; font-weight: bold; font-size: 1.1em;">⚙️ Quote:</span><br>
+      <span style="color: #e2e8f0;">[insert quote here lol]</span>
+    </td>
+  </tr>
+</table>
+
+<br>
 
 <p align="center">
-  <img src="assets/images/hero-cyan.png" alt="BANNER" width="100%" style="border-radius: 8px; border: 2px solid #00f0ff;">
+  <img src="assets/images/hero-cyan.png" alt="BANNER" width="100%" style="border-radius: 8px; border: 2px solid #00f0ff; box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);">
 </p>
 
 ## 🚀 Core Expertise
@@ -30,4 +39,4 @@ permalink: /
 | [**🗣️ README.md**](/README) | get to know how i work | [View ReadMe](/README) 
 | [**📁 Portfolio**](/portfolio) | Deep dives into architecture, migrations, and open-source contributions. 
 | [**✍️ Blog**](/blog) | tips and tricks , news in IT space, and reactions
-| [**📬 Contact**]](/contact) | Let's connect for advisory, or networking.
+| [**📬 Contact**](/contact) | Let's connect for advisory, or networking.

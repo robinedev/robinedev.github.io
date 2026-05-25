@@ -26,7 +26,7 @@ permalink: /
 
 | Section | Description | Link |
 | :--- | :--- | :--- |
-| **👤 About Me** | background | [View Profile](/about) |
+| **👤 About Me** | background | [View Profile](/profile) |
 | **🗣️ README.md** | get to know how i work | [View ReadMe](/README) |
 | **📁 Portfolio** | Deep dives into architecture, migrations, and open-source contributions. | [View Projects](/portfolio) |
 | **✍️ Blog** | tips and tricks , news in IT space, and reactions| [Read Articles](/blog) |

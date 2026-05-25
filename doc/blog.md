@@ -4,7 +4,7 @@ title: Blog
 permalink: /doc/blog/
 ---
 
-# Technical Insights & Strategy
+# a blog
 
 ---
 

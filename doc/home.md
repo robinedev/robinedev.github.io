@@ -32,13 +32,13 @@ permalink: /
 
 ## 🗺️ Explore My Work
 
-| Directory Node | Scope & Target Details | Interface Routing |
-| :--- | :--- | :--- |
-| **👤 About Me** | background | [Launch Profile ↗](/doc/profile/) |
-| **🗣️ README.md** | get to know how i work | [Launch Runbook ↗](/doc/README/) |
-| **📁 Portfolio** | Deep dives into architecture, migrations, and open-source contributions. | [Launch Archive ↗](/doc/portfolio/) |
-| **✍️ Blog** | tips and tricks , news in IT space, and reactions | [Launch Stream ↗](/doc/blog/) |
-| **📬 Contact** | Let's connect for advisory, or networking | [Establish Link ↗](/doc/contact/) |
+| Directory Node | Scope & Target Details |
+| :--- | :--- |
+| [**👤 About Me↗**](/doc/profile/)  | get to know the person behind the keyboard | 
+| [**🗣️ README.md↗**](doc/README])| get to know how i work |
+| [**📁 Portfolio↗**](/doc/portfolio/) | scripts and other uselful info | 
+| [**✍️ Blog↗**](/doc/blog/) | | tips and tricks , news in IT space, and reactions |
+| [**📬 Contact↗**](/doc/contact/) | contact me! |
 
 ***
 

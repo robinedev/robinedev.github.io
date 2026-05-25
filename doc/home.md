@@ -39,6 +39,7 @@ permalink: /
 | [**📁 Portfolio↗**](/doc/portfolio/) | scripts and other uselful info | 
 | [**✍️ Blog↗**](/doc/blog/) | tips and tricks , news in IT space, and reactions |
 | [**📬 Contact↗**](/doc/contact/) | contact me! |
+| [📖 Guestbook ↗](/doc/guestbook/) | say hi or pitch blog post ideas! | 
 
 ***
 

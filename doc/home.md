@@ -18,9 +18,6 @@ permalink: /
 </p>
 
 ## 🚀 Core Expertise
-## 🛠️ Systems Infrastructure Control Panel
-> _Interactive Matrix: Select a platform navigation tab below to cycle through structural asset layers._
-
 <div style="display: flex; gap: 6px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin-bottom: -1px; width: 100%; max-width: 560px;">
   
   <!-- Tab 1: Device Management -->
@@ -70,7 +67,3 @@ permalink: /
 | [📖 Guestbook ↗](/doc/guestbook/) | say hi or pitch blog post ideas! | 
 
 ***
-
-<p align="center" style="color: #64748b; font-size: 0.85em; font-family: monospace;">
-  // PALETTE: SLATE / CYAN / PURE_WHITE // PROTOCOL: EN-2026
-</p>

@@ -24,10 +24,10 @@ permalink: /
 
 ## 🗺️ Explore My Work
 
-| Section | Description | Link |
-| :--- | :--- | :--- |
-| **👤 About Me** | background | [View Profile](/profile) |
-| **🗣️ README.md** | get to know how i work | [View ReadMe](/README) |
-| **📁 Portfolio** | Deep dives into architecture, migrations, and open-source contributions. | [View Projects](/portfolio) |
-| **✍️ Blog** | tips and tricks , news in IT space, and reactions| [Read Articles](/blog) |
-| **📬 Contact** | Let's connect for advisory, or networking. | [Get in Touch](/contact) |
+| Section | Description |
+| :--- | :--- |
+| [**👤 About Me**](/profile)  | background | [View Profile](/profile) |
+| [**🗣️ README.md**](/README) | get to know how i work | [View ReadMe](/README) |
+| [**📁 Portfolio**](/portfolio) | Deep dives into architecture, migrations, and open-source contributions. |
+| [**✍️ Blog**](/blog) | tips and tricks , news in IT space, and reactions|
+| [**📬 Contact**]](/contact) | Let's connect for advisory, or networking.|

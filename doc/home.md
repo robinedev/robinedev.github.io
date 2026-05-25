@@ -35,7 +35,7 @@ permalink: /
 | Directory Node | Scope & Target Details |
 | :--- | :--- |
 | [**👤 About Me↗**](/doc/profile/)  | get to know the person behind the keyboard | 
-| [**🗣️ README.md↗**](doc/README])| get to know how i work |
+| [**🗣️ README.md↗**](/doc/README])| get to know how i work |
 | [**📁 Portfolio↗**](/doc/portfolio/) | scripts and other uselful info | 
 | [**✍️ Blog↗**](/doc/blog/) | tips and tricks , news in IT space, and reactions |
 | [**📬 Contact↗**](/doc/contact/) | contact me! |

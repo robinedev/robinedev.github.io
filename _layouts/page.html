@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{%- comment -%}
+  A page is one open buffer: title bar strip, line gutter, prose.
+  Markdown pages get this by default (see _config.yml defaults),
+  so a new .md file in doc/ is themed with no extra work.
+{%- endcomment -%}
+
+<article class="buffer">
+  <div class="buffer-head">
+    <span class="tab-dot dot-config" aria-hidden="true"></span>
+    <span class="buffer-name">{{ page.path | default: 'page' }}</span>
+    <span class="buffer-flag">read only</span>
+  </div>
+
+  <div class="buffer-body">
+    <div class="buffer-gutter" aria-hidden="true"></div>
+    <div class="buffer-content prose">
+      {{ content }}
+    </div>
+  </div>
+</article>

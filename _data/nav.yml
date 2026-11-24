@@ -1,0 +1,48 @@
+# ===== nav board =====
+# Single source of truth for the tab bar, the nav board and the
+# command palette. Add an entry here and it shows up in all three.
+#
+# kind: config | source | system  -> drives the legend dot colour
+# icon: plain emoji, no image requests
+
+- title: Home
+  desc: start here
+  url: /
+  icon: "\U0001F3E0"
+  kind: source
+  file: index.html
+
+- title: About Me
+  desc: get to know me
+  url: /doc/profile/
+  icon: "☕"
+  kind: config
+  file: profile.md
+
+- title: README
+  desc: how i work
+  url: /doc/readme/
+  icon: "\U0001F4DC"
+  kind: config
+  file: README.md
+
+- title: Blog
+  desc: notes & insights
+  url: /doc/blog/
+  icon: "✍️"
+  kind: source
+  file: blog.html
+
+- title: Contact
+  desc: connect with me
+  url: /doc/contact/
+  icon: "\U0001F4EC"
+  kind: system
+  file: contact.md
+
+- title: Guestbook
+  desc: leave a note
+  url: /doc/guestbook/
+  icon: "\U0001F4D6"
+  kind: system
+  file: guestbook.md

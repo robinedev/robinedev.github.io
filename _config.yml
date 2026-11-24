@@ -1,0 +1,47 @@
+# ===== robinedev.github.io // jekyll config =====
+# No gem-based theme and no plugins on purpose: every layout, style and
+# script in this repo is local and readable, so there is no third-party
+# code in the build path. GitHub Pages only needs this file to resolve
+# the layouts in _layouts/.
+
+title: Cozy Workspace
+tagline: IT Systems Engineer
+description: >-
+  Identity engineering, endpoint automation and security operations.
+  Notes from a tea-powered workspace.
+author: robinedev
+url: https://robinedev.github.io
+baseurl: ""
+
+# ===== build =====
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /doc/blog/:title/
+timezone: America/New_York
+
+# ===== theme defaults =====
+# dark = Nohr, light = Hoshido. Visitors can flip it in the status bar;
+# this is only the first-paint default before their choice is read back.
+workspace:
+  default_theme: dark
+  branch: main
+  status_note: made with tea
+
+# ===== front matter defaults =====
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - .gitignore
+  - preview

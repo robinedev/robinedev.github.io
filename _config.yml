@@ -1,15 +1,31 @@
-# ===== robinedev.github.io // jekyll config =====
+# ===== aube paul // jekyll config =====
 # No gem-based theme and no plugins on purpose: every layout, style and
 # script in this repo is local and readable, so there is no third-party
 # code in the build path. GitHub Pages only needs this file to resolve
 # the layouts in _layouts/.
 
-title: Cozy Workspace
-tagline: IT Systems Engineer
+title: Aube Paul · IT Engineer
+handle: aubep
+tagline: Building IT infrastructure for startups
 description: >-
-  Identity engineering, endpoint automation and security operations.
-  Notes from a tea-powered workspace.
-author: robinedev
+  Aube Paul, IT engineer in Columbus, Ohio. Identity, endpoint
+  automation and security operations for startups. Previously
+  HashiCorp and TravelPerk.
+author: Aube Paul
+role: IT engineer · columbus, ohio
+bio: >-
+  I automate the boring half of IT, mostly endpoints, identity, and
+  the paperwork an audit asks for, so nobody has to do it twice.
+  Perpetually mid-cup.
+
+# the sidebar block. edit freely, delete to hide it.
+now:
+  - label: learning
+    text: detection engineering
+  - label: reading
+    text: whatever MacAdmins Slack is arguing about
+  - label: steeping
+    text: genmaicha, left in far too long
 url: https://robinedev.github.io
 baseurl: ""
 
@@ -20,14 +36,6 @@ kramdown:
   syntax_highlighter: rouge
 permalink: /doc/blog/:title/
 timezone: America/New_York
-
-# ===== theme defaults =====
-# dark = Nohr, light = Hoshido. Visitors can flip it in the status bar;
-# this is only the first-paint default before their choice is read back.
-workspace:
-  default_theme: dark
-  branch: main
-  status_note: made with tea
 
 # ===== front matter defaults =====
 defaults:

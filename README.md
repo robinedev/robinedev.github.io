@@ -13,10 +13,11 @@ None, on purpose.
 - no webfonts, system font stacks only
 - no analytics, no trackers, no third party images
 
-The one external component is [giscus](https://giscus.app) on the
-guestbook, which backs comments onto this repo's GitHub Discussions.
-Remove that one `<script>` tag in `doc/guestbook.md` and the site makes
-no third party requests at all.
+The one external component is [utterances](https://utteranc.es), which
+backs comments onto this repo's GitHub issues. It loads only when a
+reader asks for it, so a page nobody comments on makes no third party
+request at all. Delete `_includes/comments.html` and the two lines that
+include it to remove it entirely.
 
 ## Layout
 
@@ -24,12 +25,12 @@ no third party requests at all.
 .
 ├── _config.yml          site settings, bio, "currently" block
 ├── _data/nav.yml        sidebar nav
-├── _includes/           inline SVG figures
+├── _includes/           inline SVG figures, comments block
 ├── _layouts/            default (sidebar shell), page, post
 ├── _posts/              YYYY-MM-DD-slug.md
 ├── assets/
 │   ├── css/main.css     the whole theme, colour tokens at the top
-│   ├── js/main.js       day/night steep toggle, giscus sync
+│   ├── js/main.js       day/night steep toggle, comment loader
 │   ├── images/avatar.png
 │   └── favicon.svg
 ├── doc/                 content pages

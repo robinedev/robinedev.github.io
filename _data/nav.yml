@@ -1,0 +1,15 @@
+# ===== sidebar nav =====
+# One entry per page. Order here is the order shown.
+
+- title: Home
+  url: /
+- title: About
+  url: /doc/profile/
+- title: README
+  url: /doc/readme/
+- title: Blog
+  url: /doc/blog/
+- title: Contact
+  url: /doc/contact/
+- title: Guestbook
+  url: /doc/guestbook/

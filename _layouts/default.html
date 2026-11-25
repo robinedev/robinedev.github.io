@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-theme="day">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Content Security Policy. GitHub Pages cannot set HTTP headers,
+         so this goes in a meta tag, which must sit before anything it
+         governs. default-src 'none' means nothing loads unless it is
+         named below. The sha256 is of the theme-boot script further
+         down: change that script and you must recompute this hash, or
+         the browser will refuse to run it.
+         frame-ancestors is deliberately absent, it is ignored in a
+         meta tag and can only be set as a header. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; base-uri 'self'; form-action 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://giscus.app 'sha256-0Ehgo8fjSGvb0uM7aHDWz1yAgsfkV6eT8F+MTlmcjP4='; frame-src https://giscus.app; connect-src https://giscus.app"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>{% if page.title and page.url != '/' %}{{ page.title }} &middot; {{ site.author }}{% else %}{{ site.title }}{% endif %}</title>
+
+    {% assign desc = page.description | default: site.description %}
+    <meta name="description" content="{{ desc | strip_newlines | strip }}" />
+    <meta name="author" content="{{ site.author }}" />
+    <meta name="theme-color" content="#f2ebdf" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:description" content="{{ desc | strip_newlines | strip }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+
+    <!-- set the steep before first paint, so there is no flash -->
+    <script>
+      (function () {
+        var t;
+        try { t = localStorage.getItem("steep"); } catch (e) {}
+        if (t !== "day" && t !== "night") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+
+    <div class="shell">
+      <aside class="rail">
+        <div class="portrait">
+          <img
+            src="{{ '/assets/images/avatar.png' | relative_url }}"
+            alt="{{ site.author }}"
+            width="132"
+            height="132"
+          />
+        </div>
+
+        <div class="rail-ident">
+          <p class="rail-name"><a href="{{ '/' | relative_url }}">{{ site.author }}</a></p>
+          <p class="rail-role">{{ site.role }}</p>
+        </div>
+
+        <p class="rail-bio">{{ site.bio }}</p>
+
+        <nav class="rail-nav" aria-label="Pages">
+          {% for item in site.data.nav %}
+            <a href="{{ item.url | relative_url }}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+
+        {% if site.now %}
+          <div class="rail-now">
+            <p class="block-title">currently</p>
+            <ul class="now-list">
+              {% for row in site.now %}
+                <li><span>{{ row.label }}</span>{{ row.text }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div class="rail-foot">
+          <button type="button" class="steep" id="steep">day steep</button>
+        </div>
+      </aside>
+
+      <main class="column" id="content">
+        {{ content }}
+      </main>
+    </div>
+
+    <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  </body>
+</html>

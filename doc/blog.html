@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Field notes
+title: Blog
 permalink: /doc/blog/
 description: >-
   Write-ups on endpoint management, identity, and the compliance work
@@ -8,7 +8,61 @@ description: >-
 ---
 
 <div class="page-head">
-  <h1>Field notes</h1>
+  <h1>Blog</h1>
+  <p class="standfirst">
+    Posts here are the write-up I wish I&rsquo;d found while I was
+    stuck. The actual configuration, the dead end I went down first,
+    and whether it survived contact with a real fleet.
+  </p>
+</div>
+
+<div class="prose">
+  <p>
+    Mostly endpoint management, identity plumbing, and the compliance
+    work that sits between them. If I haven&rsquo;t run it in
+    production, it doesn&rsquo;t get a post.
+  </p>
+</div>
+
+<div class="rule"></div>
+
+{% if site.posts.size > 0 %}
+  <div class="entries">
+    {% for post in site.posts %}
+      <article class="entry">
+        <p class="meta">
+          <span>{{ post.date | date: "%b %-d, %Y" | downcase }}</span>
+          {% if post.reading_time %}
+            <span class="dot">&middot;</span><span>{{ post.reading_time }}</span>
+          {% endif %}
+          {% if post.tags and post.tags != empty %}
+            <span class="dot">&middot;</span>
+            <span>{{ post.tags | join: ', ' }}</span>
+          {% endif %}
+        </p>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 200 }}</p>
+      </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <div class="note">
+    Nothing published yet. Drop a markdown file in <code>_posts/</code>
+    named <code>YYYY-MM-DD-your-slug.md</code> and it shows up here on
+    its own.
+  </div>
+{% endif %}
+---
+layout: default
+title: Blog
+permalink: /doc/blog/
+description: >-
+  Write-ups on endpoint management, identity, and the compliance work
+  in between. Mostly the things I got stuck on first.
+---
+
+<div class="page-head">
+  <h1>Blog</h1>
   <p class="standfirst">
     Posts here are the write-up I wish I&rsquo;d found while I was
     stuck. The actual configuration, the dead end I went down first,

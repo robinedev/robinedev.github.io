@@ -15,7 +15,7 @@ None, on purpose.
 
 The one external component is [giscus](https://giscus.app) on the
 guestbook, which backs comments onto this repo's GitHub Discussions.
-Remove that one script tag in `doc/guestbook.md` and the site makes
+Remove that one `<script>` tag in `doc/guestbook.md` and the site makes
 no third party requests at all.
 
 ## Layout

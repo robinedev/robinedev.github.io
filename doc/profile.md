@@ -22,11 +22,16 @@ security and compliance work that pays the bills now.
 ## What I do
 
 - **Endpoints.** Zero touch enrollment, configuration as code, and
-  compliance baselines that report on themselves.
+  compliance baselines that report on themselves. Jamf, Fleet, and
+  Rippling MDM.
 - **Identity.** Joiner, mover, and leaver automation, SSO, and access
-  that expires without a reminder.
+  that expires without a reminder. Okta, Google Workspace, and
+  Rippling IdP.
 - **Security operations.** Hardening, evidence collection, and turning
-  an audit into a report instead of a fire drill.
+  an audit into a report instead of a fire drill. Asset and lifecycle
+  tracking in Oomnitza and Iru.
+- **Scripting.** Bash and Python, aimed squarely at the jobs nobody
+  should do by hand twice. Docker is the one being learned right now.
 
 ## What I've shipped
 

@@ -3,57 +3,110 @@ layout: page
 title: README
 permalink: /doc/readme/
 description: >-
-  How I work, in short. What I'll do first, what you can count on, and
-  how to get hold of me.
+  How to work with me. What happens when you send a request, when to
+  catch me, where this goes wrong, and what you get at the end.
 ---
 
 # How to work with me
 
-I'd rather you never thought about IT at all. If you open your laptop
-and everything's already there, I've done my job properly.
+Most people meet IT on their worst day. Something broke, access
+vanished, or the laptop showed up empty. The whole point of this job
+is that the day never arrives: you open the laptop, everything is
+already there, and IT stays a thing you never had to think about.
 
-## I ask before I build
+This page is the shortcut, so nobody has to work me out by trial and
+error.
 
-This is the thing people notice first. I'll sketch back what I think
-you've asked for and check I've got it right, before I build anything.
-It feels slower for about ten minutes and saves weeks.
+## What happens when you send a request
 
-Diagrams land with me faster than paragraphs, so a napkin drawing or a
-photo of a whiteboard is one of my favourite things to receive. If
-drawing isn't your thing, tell me however's easiest and I'll draw it
-back to you.
+It comes back to you as a sketch first.
+
+Before anything gets built, the ask returns in my words, usually
+drawn, so we can check it says what you meant. That feels slow for
+about ten minutes. It saves weeks.
+
+Pictures land faster than paragraphs here, so a napkin drawing or a
+photo of a whiteboard is a genuinely good thing to send. If drawing
+isn't your thing, say it however's easiest and it'll come back to you
+drawn.
 
 {% include diagram-workflow.html %}
 
-## What I do first on a new team
+Anything with real consequences gets an RFC instead of an argument in
+a thread. The
+[HashiCorp template](https://www.hashicorp.com/en/how-hashicorp-works/articles/rfc-template)
+is the usual starting point, though whatever your team already runs on
+is fine.
 
-A gap analysis across configuration and endpoints, so I know what's
-actually out there rather than what we think is. Then I go looking for
-two things:
+## When to catch me
 
-- **What nobody wrote down.** Usually one person is holding it in
-  their head, which is a risk to them as much as to everyone else.
-- **What's done fifty times a month.** If it's repetitive, it should
+Mornings are for building. Afternoons are for people.
+
+Heads-down work happens before lunch. To think out loud together, take
+the afternoon, and that is the half of the day I look forward to.
+Bouncing an idea around, hearing how your team actually works, finding
+out what has been quietly driving everyone up the wall: that is the
+good part of the job, not the tax on it.
+
+## What gets looked at first on a new team
+
+A gap analysis across configuration and endpoints, so the work starts
+from what is actually out there rather than what everyone assumes.
+Then two questions:
+
+- **What did nobody write down?** Usually one person is carrying it in
+  their head, which is a risk to them more than to anyone else.
+- **What happens fifty times a month?** If it is repetitive, it should
   be automated, and I'd like to take it off you.
 
-## What you can count on
+Then it goes somewhere visible. Jira, or whatever you already use, so
+the people waiting on a thing can follow it without having to ask for
+status.
 
-**It still works after I've gone.** I automate it or I document it,
+## Where this goes wrong
+
+Two honest ones, and they share a fix.
+
+**Too many threads at once.** When several projects are live, the
+quiet one is the one that slips. If yours has gone quiet, nudge me. It
+is not a lack of care, it is a lack of a reminder.
+
+**Silence while heads-down.** Deep in a build, it is easy to forget
+that quiet reads as "nothing is happening" to everyone waiting. Ask
+for an update whenever you want one. You will never be bothering me.
+
+## How to tell me something is wrong
+
+Plainly, early, and one to one. That is the version anyone can act on.
+
+For anything bigger, send it in writing first so it gets proper
+thought, then let's talk it through. Nothing needs softening on the
+way in. Saying it straight is the kind thing to do.
+
+## What you get at the end
+
+**It still works once I've moved on.** Automated or documented,
 ideally both.
 
-**I'll own the whole thing.** Endpoints, identity, access reviews, and
-the evidence an audit asks for. You won't need to project manage me.
+**One owner, not five.** Endpoints, identity, access reviews, and the
+evidence an audit asks for. No project managing required.
 
-**I'll tell you early if something's off**, including when it's my own
-mistake. The config was wrong, not the person who ran it.
+**Bad news early**, including when the mistake is mine. The config was
+wrong, not the person who ran it.
 
-## Getting hold of me
+## Reaching me
 
 A ticket for anything with a deliverable, a message for a quick
-unblock, email for anything formal. You'll usually hear back the same
-working day. If your thing has to wait, you'll hear that from me
-rather than hearing nothing.
+unblock, email for anything formal. Same working day, usually. If your
+thing has to wait, you will hear that, rather than hearing nothing.
 
-I'm happiest when someone brings me a messy problem and the room to
-redesign it. If it's outside my lane, I'll say so and point you at
-someone better placed than me.
+## The short version
+
+**Fills the tank:** a messy problem with room to redesign it, a
+whiteboard with someone else standing at it, learning how another team
+works, a process that finally gets deleted.
+
+**Empties it:** meetings with no agenda, and decisions nobody owns.
+
+Outside my lane? You will hear that too, along with the name of
+someone better placed.

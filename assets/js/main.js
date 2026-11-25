@@ -22,8 +22,10 @@
     return document.getElementById("comments");
   }
 
-  /* utterances offers no way to restyle a frame once it is up, so
-     changing steep means building the frame again from scratch. */
+  /* utterances paints its own frame on a white canvas whatever theme
+     it is given, so the comment panel stays light in both steeps and
+     is framed as a deliberate inset card in main.css. That also means
+     the frame never needs rebuilding when the steep changes. */
   function mount() {
     var el = box();
     if (!el) { return; }
@@ -39,18 +41,10 @@
     s.setAttribute("repo", el.getAttribute("data-repo"));
     s.setAttribute("issue-term", el.getAttribute("data-issue-term"));
     s.setAttribute("label", el.getAttribute("data-label"));
-    s.setAttribute(
-      "theme",
-      root.getAttribute("data-theme") === "night" ? "github-dark" : "github-light"
-    );
+    s.setAttribute("theme", "github-light");
     slot.appendChild(s);
 
     el.setAttribute("data-loaded", "true");
-  }
-
-  function remount() {
-    var el = box();
-    if (el && el.getAttribute("data-loaded") === "true") { mount(); }
   }
 
   function apply(theme) {
@@ -81,7 +75,6 @@
         var next = root.getAttribute("data-theme") === "night" ? "day" : "night";
         apply(next);
         save(next);
-        remount();
       });
     }
 

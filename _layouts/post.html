@@ -1,58 +1,27 @@
 ---
 layout: default
 ---
-{%- comment -%}
-  Blog post. Drop a file in _posts/ named YYYY-MM-DD-slug.md and it
-  lands at /doc/blog/slug/ with this layout, listed automatically on
-  the blog hub.
-{%- endcomment -%}
-
-<article class="buffer">
-  <div class="buffer-head">
-    <span class="tab-dot dot-source" aria-hidden="true"></span>
-    <span class="buffer-name">{{ page.path | default: 'post.md' }}</span>
-    <span class="buffer-flag">{{ page.date | date: "%Y-%m-%d" }}</span>
+<article>
+  <div class="page-head">
+    <p class="meta">
+      <span>{{ page.date | date: "%b %-d, %Y" | downcase }}</span>
+      {% if page.reading_time %}<span class="dot">&middot;</span><span>{{ page.reading_time }}</span>{% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="standfirst">{{ page.description }}</p>{% endif %}
   </div>
 
-  <div class="buffer-body">
-    <div class="buffer-gutter" aria-hidden="true"></div>
-    <div class="buffer-content">
-      <div class="article-meta">
-        <span>{{ page.date | date: "%b %-d, %Y" }}</span>
-        {% if page.reading_time %}
-          <span class="meta-sep">&middot;</span>
-          <span>{{ page.reading_time }}</span>
-        {% endif %}
-        {% if page.author %}
-          <span class="meta-sep">&middot;</span>
-          <span>{{ page.author }}</span>
-        {% endif %}
-      </div>
+  <div class="prose">
+    {{ content }}
+  </div>
 
-      <div class="prose">
-        <h1>{{ page.title }}</h1>
-        {% if page.description %}
-          <p class="article-description">{{ page.description }}</p>
-        {% endif %}
-        {{ content }}
-      </div>
+  {% if page.tags and page.tags != empty %}
+    <div class="rule"></div>
+    <p class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>
+  {% endif %}
 
-      {% if page.tags and page.tags != empty %}
-        <div class="tag-row">
-          {% for tag in page.tags %}
-            <span class="tag">#{{ tag }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <hr />
-
-      <div class="cta-panel">
-        &#128172; Thoughts on this one? The
-        <a href="{{ '/doc/guestbook/' | relative_url }}">guestbook</a>
-        is open, or come find me on
-        <a href="{{ '/doc/contact/' | relative_url }}">any of these</a>.
-      </div>
-    </div>
+  <div class="note">
+    Thoughts on this one? The
+    <a href="{{ '/doc/guestbook/' | relative_url }}">guestbook</a> is open.
   </div>
 </article>

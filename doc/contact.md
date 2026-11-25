@@ -18,10 +18,7 @@ stuck on this week. No agenda needed.
 | --- | --- |
 | LinkedIn | [linkedin.com/in/aubep](https://www.linkedin.com/in/aubep/) |
 | GitHub | [github.com/robinedev](https://github.com/robinedev) |
-| Email | `you [at] example.com` |
-
-<!-- Swap the email placeholder for your real address before publishing.
-     It's spelled out on purpose, so basic scrapers skip it. -->
+| Email | TBA |
 
 Two things get you a faster reply: tell me what you're trying to do,
 not just what broke, and paste the error text so I can search it.

@@ -21,7 +21,7 @@ bio: >-
 # the sidebar block. edit freely, delete to hide it.
 now:
   - label: learning
-    text: detection engineering
+    text: Okta, and TypeScript
   - label: reading
     text: whatever MacAdmins Slack is arguing about
   - label: steeping

@@ -3,16 +3,15 @@ layout: page
 title: README
 permalink: /doc/readme/
 description: >-
-  How I work, what I need to do my best work, and the fastest way to
-  get something useful out of me.
+  How to work with me. My working style, how I handle pressure and
+  disagreement, and the fastest way to get something useful out of me.
 ---
 
-# README.md
+# How to work with Aube
 
-This is a personal README. It's the same thing teams write for a
-service, what it does, how to run it, and where it breaks, except the
-service is me. Skim it before we work together and we skip a week of
-figuring each other out.
+This is a personal README. Teams write them for a service: what it
+does, how to run it, and where it breaks. This one is for me. Skim it
+before we work together and we skip a week of figuring each other out.
 
 **The short version:** show me a picture, and write it down. I think
 in diagrams, and I remember what's in a doc, not what was said in a
@@ -53,7 +52,7 @@ a "yeah, I did that" in passing.
 
 {% include diagram-workflow.html %}
 
-## The rest of how I work
+## How I work
 
 **Automate it, or document it. Ideally both.** If I do a task twice by
 hand, the third time is a script. If it can't be a script, it becomes
@@ -71,6 +70,67 @@ permission than to claw one back after six months of drift.
 **Fix the class, not the ticket.** One broken laptop is a ticket. Five
 broken the same way is a configuration bug, and I'd rather spend the
 afternoon on the config than the week on the tickets.
+
+## When the brief is vague
+
+I don't sit on ambiguity and I don't guess in silence. I write down
+the reading of it I think is right, send it back in a line or two, and
+start on the part that's true under either reading. If a decision
+can't be reversed, I stop and ask first. If it can, I'll make the call
+and flag it, because waiting a day for a reply costs more than
+changing my mind later.
+
+## When everything is urgent
+
+Not everything is. I sort by blast radius: how many people are stuck,
+whether there's a workaround, and whether it gets worse if it waits. A
+loud request from one person loses to a quiet one blocking a whole
+team. If your thing drops down the list, you'll hear that from me
+rather than hearing nothing, because silence reads as "forgotten."
+
+## When I disagree with you
+
+I'll say so once, plainly, with the reason and what I'd do instead.
+Then, if the call isn't mine, I'll commit to your decision and support
+it properly, no quiet foot-dragging. If I think a decision is actually
+dangerous, I'll say that part out loud, in writing, and escalate once.
+Disagreeing is cheap. Relitigating a settled decision for a month is
+expensive.
+
+## When I'm wrong
+
+I'd rather find out early and loudly than late and politely. If I
+broke it, I'll say I broke it, fix it, and write up what happened
+without hunting for someone to pin it on. Postmortems are for the
+configuration, not for the person who ran the command.
+
+## In an incident
+
+I get quieter, not louder. First the bleeding stops, then we work out
+why. I'll claim the comms role if nobody has, because the worst thing
+in an outage is four people fixing the same thing and nobody telling
+the rest of the company anything. The write-up comes the next day,
+while it's still accurate.
+
+## How I like to be managed
+
+Give me the outcome and the constraints, then leave me the how. Tell
+me what "done" looks like, and tell me early if that changes. I don't
+need daily check-ins, but I do need to know where the work sits in the
+bigger picture, otherwise I optimise the wrong thing beautifully.
+
+What I want from a one to one: what's coming, what I'm missing, and
+one thing I could do better. I'll bring the same.
+
+## What energizes me, and what drains me
+
+**Energizing:** a manual process I'm allowed to delete. Someone
+handing me a messy problem and the room to redesign it. Teaching
+somebody the thing that took me a week to work out.
+
+**Draining:** work that can't be finished because the decision keeps
+moving. Meetings that could have been a doc. Being asked for a number
+without being told what decision it's feeding.
 
 ## Working with me
 
@@ -113,6 +173,10 @@ code, a design system, or data modelling. Anywhere I'd be the
 third-best person in the room, I'll tell you. That's not false
 modesty, it's self-preservation.
 
+**What I'm working on:** saying "not this quarter" earlier. I'm good
+at absorbing one more small thing, which is how a quarter quietly
+fills up with small things.
+
 ## Operating rhythm
 
 Deep work in the morning. Interrupt it for an outage, not for a status
@@ -131,7 +195,6 @@ the expensive version. I'll ask clarifying questions rather than
 defend a draft, and I'd much rather be corrected in a comment than in
 a postmortem.
 
-> This page gets edited when the answers change, not once a year. If
-> something here has gone stale, the
-> [guestbook]({{ '/doc/guestbook/' | relative_url }}) is the fastest
-> way to tell me.
+> Curious about the parts of me that aren't work? Pickleball,
+> foraging, gardening, and far too many card games live on
+> [about]({{ '/doc/profile/' | relative_url }}).

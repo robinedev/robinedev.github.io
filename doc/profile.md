@@ -3,7 +3,8 @@ layout: page
 title: About
 permalink: /doc/profile/
 description: >-
-  Who I am, what I spend my days on, and how I got into systems work.
+  Who I am, what I spend my days on, and what I get up to when I'm not
+  in a terminal.
 ---
 
 # About me
@@ -50,9 +51,24 @@ the MacAdmins conference this year.
 
 ## Outside the terminal
 
-Tea, strong and usually over-steeped. Strategy games with far too many
-menus. Writing up the thing I just figured out, normally at the exact
-moment I should be going to bed.
+**Pickleball.** The sport that looks gentle until someone sets up at
+the kitchen line and you realise you've been drawn into a chess match
+at close range. I play more than I probably should.
+
+**Foraging.** I like knowing what's edible in a patch of woods I walk
+past every week. It's the same instinct as the day job, honestly:
+learn the system well enough to read it at a glance, and be careful
+about the bits that will hurt you if you guess.
+
+**Gardening.** Slower feedback loops than anything at work, which is
+the point. Nothing in a garden can be fixed by restarting it.
+
+**Trading card games.** Deckbuilding is just systems design with
+better art. I will happily talk about a format I haven't played in
+years.
+
+And tea. Strong, usually over-steeped, present in roughly every photo
+of me at a desk.
 
 > Looking for the working-with-me version instead? That's the
 > [README]({{ '/doc/readme/' | relative_url }}).

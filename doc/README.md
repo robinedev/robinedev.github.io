@@ -75,7 +75,7 @@ afternoon on the config than the week on the tickets.
 ## Working with me
 
 | channel | good for | you can expect |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | Issue or ticket | anything with a deliverable | same working day |
 | Chat | quick unblocks, "is this normal?" | a few hours |
 | Email | external, formal, anything with a paper trail | a day or two |

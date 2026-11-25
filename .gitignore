@@ -1,3 +1,18 @@
+# ===== jekyll / github pages =====
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+Gemfile.lock
+vendor/
+
+# ===== editors / os =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

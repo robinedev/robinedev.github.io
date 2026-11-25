@@ -2,38 +2,26 @@
 layout: page
 title: Contact
 permalink: /doc/contact/
-description: Ways to reach me, and roughly how long each one takes.
+description: Ways to reach me, plus a link to book a tea chat.
 ---
 
-# Let's talk
+# Say hi
 
-Happy to talk shop: endpoint management, identity plumbing, compliance
-automation, or whether a tool is worth its licence.
+I love setting up **tea chats**. Like coffee chats, but better.
 
-| where | link | best for |
-| --- | --- | --- |
-| LinkedIn | [linkedin.com/in/aubep](https://www.linkedin.com/in/aubep/) | work conversations and intros |
-| GitHub | [github.com/robinedev](https://github.com/robinedev) | code, issues, pull requests |
-| Email | `you [at] example.com` | anything long, formal, or with attachments |
+[Pick a time that works for you](https://calendar.app.google/N1T7zn7EtQMpVNeX8)
+
+Happy to talk about endpoints, identity, audits, or whatever you're
+stuck on this week. No agenda needed.
+
+| where | link |
+| --- | --- |
+| LinkedIn | [linkedin.com/in/aubep](https://www.linkedin.com/in/aubep/) |
+| GitHub | [github.com/robinedev](https://github.com/robinedev) |
+| Email | `you [at] example.com` |
 
 <!-- Swap the email placeholder for your real address before publishing.
-     It's written out in words on purpose: it keeps basic scrapers off
-     it without hiding it from people. -->
+     It's spelled out on purpose, so basic scrapers skip it. -->
 
-## Before you write
-
-A couple of things get you a faster, more useful reply:
-
-- **Lead with the outcome**, not the mechanism. "People need access to
-  X on day one" beats "add this to the group," because sometimes the
-  group is the wrong answer.
-- **Paste the error, and screenshot the screen.** The text so I can
-  search it, the picture so I can see where you were.
-- **Say the deadline out loud.** I'll almost always say yes to a real
-  one, and almost always push back on an invented one.
-- **Recruiters are welcome.** Please include the stack, the location
-  policy, and a range. I'll always reply to one that does.
-
-> Rough timings: chat in a few hours, issues the same working day,
-> email in a day or two. If something is genuinely on fire, say so in
-> the first line.
+Two things get you a faster reply: tell me what you're trying to do,
+not just what broke, and paste the error text so I can search it.

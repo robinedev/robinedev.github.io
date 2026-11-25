@@ -20,8 +20,5 @@ layout: default
     <p class="tags">{% for t in page.tags %}<span>#{{ t }}</span>{% endfor %}</p>
   {% endif %}
 
-  <div class="note">
-    Thoughts on this one? The
-    <a href="{{ '/doc/guestbook/' | relative_url }}">guestbook</a> is open.
-  </div>
+  {% include comments.html %}
 </article>

@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Content Security Policy. GitHub Pages cannot set HTTP headers,
+         so this goes in a meta tag, which must sit before anything it
+         governs. default-src 'none' means nothing loads unless it is
+         named below. The sha256 is of the theme-boot script further
+         down: change that script and you must recompute this hash, or
+         the browser will refuse to run it.
+         frame-ancestors is deliberately absent, it is ignored in a
+         meta tag and can only be set as a header. -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; base-uri 'self'; form-action 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://giscus.app 'sha256-0Ehgo8fjSGvb0uM7aHDWz1yAgsfkV6eT8F+MTlmcjP4='; frame-src https://giscus.app; connect-src https://giscus.app"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
     <title>{% if page.title and page.url != '/' %}{{ page.title }} &middot; {{ site.author }}{% else %}{{ site.title }}{% endif %}</title>
 
     {% assign desc = page.description | default: site.description %}

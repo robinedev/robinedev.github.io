@@ -1,0 +1,60 @@
+{%- comment -%}
+  Inline SVG so it picks up the page colours instead of needing two
+  exported images. Original artwork.
+{%- endcomment -%}
+<div class="figure">
+  <svg viewBox="0 0 680 150" role="img" aria-labelledby="flow-t flow-d">
+    <title id="flow-t">How a request moves</title>
+    <desc id="flow-d">
+      A written request becomes a sketch we agree on, then an automated
+      change, then a written runbook that outlives the task.
+    </desc>
+
+    <defs>
+      <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5"
+              markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10 z" fill="var(--rule)" />
+      </marker>
+    </defs>
+
+    <text x="0" y="14" class="fig-label">how a request moves</text>
+
+    <g>
+      <rect x="1" y="34" width="150" height="62" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="76" y="60" text-anchor="middle" class="fig-title">you send it</text>
+      <text x="76" y="78" text-anchor="middle" class="fig-sub">in writing</text>
+    </g>
+    <line x1="156" y1="65" x2="182" y2="65" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="187" y="34" width="150" height="62" rx="2" fill="var(--sunk)"
+            stroke="var(--accent)" />
+      <text x="262" y="60" text-anchor="middle" class="fig-title">I sketch it back</text>
+      <text x="262" y="78" text-anchor="middle" class="fig-sub">boxes and arrows</text>
+    </g>
+    <line x1="342" y1="65" x2="368" y2="65" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="373" y="34" width="150" height="62" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="448" y="60" text-anchor="middle" class="fig-title">we automate it</text>
+      <text x="448" y="78" text-anchor="middle" class="fig-sub">once, properly</text>
+    </g>
+    <line x1="528" y1="65" x2="554" y2="65" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="559" y="34" width="120" height="62" rx="2" fill="var(--sunk)"
+            stroke="var(--leaf)" />
+      <text x="619" y="60" text-anchor="middle" class="fig-title">runbook</text>
+      <text x="619" y="78" text-anchor="middle" class="fig-sub">it outlives me</text>
+    </g>
+
+    <path d="M619 100 L619 122 Q619 130 611 130 L84 130 Q76 130 76 122 L76 102"
+          fill="none" stroke="var(--rule)" stroke-dasharray="3 4"
+          marker-end="url(#arw)" />
+    <text x="348" y="146" text-anchor="middle" class="fig-sub">
+      the next request starts from the doc
+    </text>
+  </svg>
+</div>

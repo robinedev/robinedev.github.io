@@ -10,10 +10,13 @@
          down: change that script and you must recompute this hash, or
          the browser will refuse to run it.
          frame-ancestors is deliberately absent, it is ignored in a
-         meta tag and can only be set as a header. -->
+         meta tag and can only be set as a header.
+         utterances is the only outside origin allowed, and only to
+         run its loader and show its frame. There is no connect-src,
+         so this page cannot make a network request of its own. -->
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; base-uri 'self'; form-action 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://giscus.app 'sha256-0Ehgo8fjSGvb0uM7aHDWz1yAgsfkV6eT8F+MTlmcjP4='; frame-src https://giscus.app; connect-src https://giscus.app"
+      content="default-src 'none'; base-uri 'self'; form-action 'none'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self' https://utteranc.es 'sha256-0Ehgo8fjSGvb0uM7aHDWz1yAgsfkV6eT8F+MTlmcjP4='; frame-src https://utteranc.es"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 

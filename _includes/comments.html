@@ -1,0 +1,34 @@
+{% comment %}
+  Comments, run by utterances. Each page gets its own issue in this
+  repo, matched on pathname, and the thread lives there. Nothing is
+  stored on this site and no account here is needed to read.
+
+  The thread stays folded behind a link by default, so a post with no
+  replies never shows an empty box. Once a post has replies, add
+  comments: true to its front matter and the thread opens on its own.
+
+  utterances writes its own <style> into the head. Our policy blocks
+  that on purpose, so the two rules it needs live in main.css instead.
+{% endcomment %}
+<section
+  class="comments"
+  id="comments"
+  data-repo="robinedev/robinedev.github.io"
+  data-issue-term="pathname"
+  data-label="comments"
+  {% if page.comments %}data-autoload="true"{% endif %}
+>
+  <div class="rule"></div>
+  <p class="block-title">comments</p>
+
+  <button type="button" class="comments-open">Be the first to comment</button>
+
+  <div class="comments-mount"></div>
+
+  <p class="comments-fine">
+    Comments are GitHub issues, so you sign in with GitHub to leave one.
+    You can also
+    <a href="https://github.com/robinedev/robinedev.github.io/issues">read and post on GitHub</a>
+    instead.
+  </p>
+</section>

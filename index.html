@@ -1,953 +1,106 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Home -</title>
-        <style>
-            :root {
-                /* main base-palette */
-                --bg-canvas: #fcf8f3;
-                --bg-panel: #fdfaf5;
-                --border-crisp: 1px solid #dfd3c3;
-                --text-main: #3e2723;
-                --text-muted: #8c7e7c;
-
-                /* accent */
-                --accent-brown: #d1b8a5;
-                --accent-blue: #9bbec7;
-                --accent-blue-warm: #b9d2d9;
-                --pill-bg: #fffcf7;
-            }
-
-            body {
-                font-family: "Verdana", sans-serif;
-                background-color: var(--bg-canvas);
-                background-image:
-                    radial-gradient(
-                        at 0% 0%,
-                        rgba(155, 190, 199, 0.1) 0px,
-                        transparent 40%
-                    ),
-                    radial-gradient(
-                        at 100% 100%,
-                        rgba(207, 155, 130, 0.08) 0px,
-                        transparent 40%
-                    );
-                color: var(--text-main);
-                padding: 40px 16px;
-                margin: 0;
-                -webkit-font-smoothing: antialiased;
-            }
-
-            h1,
-            h2,
-            h3,
-            h4,
-            summary {
-                font-family: "Verdana", sans-serif;
-                font-weight: 700;
-                margin: 0;
-            }
-
-            /* ===== sticky header 1===== */
-            .sticky-header-container {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: 1000;
-                background: rgba(252, 248, 243, 0.85);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                padding: 12px 16px;
-                border-bottom: var(--border-crisp);
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .sticky-header-container .canvas-container-inner {
-                max-width: 850px;
-                width: 100%;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            /* Adjust main content padding to prevent clipping behind sticky header */
-            .canvas-container {
-                max-width: 850px;
-                margin: 160px auto 0 auto;
-                display: flex;
-                flex-direction: column;
-                gap: 28px;
-            }
-
-            /* ===== GAMIFIED PROGRESS BAR MODULE ===== */
-            .quest-tracker {
-                background: var(--bg-panel);
-                border: var(--border-crisp);
-                border-radius: 12px;
-                padding: 12px 20px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 16px;
-                box-shadow: 0 4px 12px rgba(62, 39, 35, 0.03);
-            }
-
-            .quest-info {
-                font-size: 0.7rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                color: var(--text-main);
-                min-width: 90px;
-            }
-
-            .progress-rail {
-                flex-grow: 1;
-                height: 10px;
-                background: rgba(223, 211, 195, 0.3);
-                border-radius: 999px;
-                overflow: hidden;
-                position: relative;
-                border: 1px solid rgba(223, 213, 195, 0.2);
-            }
-
-            .progress-fill {
-                height: 100%;
-                width: 0%;
-                background: linear-gradient(
-                    90deg,
-                    var(--accent-blue),
-                    var(--accent-blue-warm)
-                );
-                border-radius: 999px;
-                transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            }
-
-            .xp-counter {
-                font-size: 0.75rem;
-                font-weight: 700;
-                color: var(--accent-blue);
-                background: var(--pill-bg);
-                padding: 4px 10px;
-                border-radius: 6px;
-                border: var(--border-crisp);
-            }
-
-            /* ===== center bar===== */
-            .nav-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 12px;
-                background: var(--bg-panel);
-                border: var(--border-crisp);
-                border-radius: 12px;
-                padding: 12px 24px;
-                box-shadow: 0 4px 12px rgba(62, 39, 35, 0.03);
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .minimal-nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 4px;
-            }
-
-            .nav-link {
-                background: transparent;
-                border: 1px solid transparent;
-                border-radius: 4px;
-                padding: 6px 12px;
-                color: var(--text-main);
-                text-decoration: none !important;
-                font-size: 0.75rem;
-                font-weight: 700;
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 22px;
-                min-width: 100px;
-                transition: all 0.15s ease;
-            }
-
-            /* Sliding Text Core Modules */
-            .nav-link .link-title,
-            .nav-link .link-desc {
-                position: absolute;
-                width: 100%;
-                text-align: center;
-                padding: 0 4px;
-                box-sizing: border-box;
-                transition:
-                    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
-                    opacity 0.15s ease;
-            }
-
-            .nav-link .link-title {
-                opacity: 1;
-                transform: translateY(0);
-                color: var(--text-main);
-            }
-
-            .nav-link .link-desc {
-                opacity: 0;
-                transform: translateY(18px);
-                color: var(--accent-blue);
-                font-size: 0.65rem;
-            }
-
-            /* Hover States */
-            .nav-link:hover {
-                border-color: #dfd3c3;
-                background: var(--pill-bg);
-            }
-
-            .nav-link:hover .link-title {
-                opacity: 0;
-                transform: translateY(-18px);
-            }
-
-            .nav-link:hover .link-desc {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            /* Café Board Legend Indicators */
-            .nav-legend {
-                display: flex;
-                justify-content: center;
-                gap: 16px;
-                font-size: 0.6rem;
-                text-transform: uppercase;
-                letter-spacing: 0.8px;
-                color: var(--text-muted);
-            }
-
-            .legend-item {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-            }
-
-            .legend-dot {
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-            }
-            .dot-profile {
-                background: var(--accent-brown);
-            }
-            .dot-core {
-                background: var(--accent-blue);
-            }
-            .dot-network {
-                background: var(--accent-blue-warm);
-            }
-
-            /* ===== HERO PANEL & BIO WITH AVATAR ===== */
-            .hero-panel {
-                background: var(--bg-panel);
-                border: var(--border-crisp);
-                border-radius: 12px;
-                padding: 48px 32px;
-                text-align: center;
-                position: relative;
-                box-shadow: 0 8px 24px rgba(62, 39, 35, 0.05);
-            }
-
-            /* New Avatar Frame */
-            .profile-avatar-frame {
-                width: 90px;
-                height: 90px;
-                border-radius: 50%;
-                border: 2px solid var(--accent-blue);
-                background-color: var(--pill-bg);
-                margin: 0 auto 20px auto;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0 4px 12px rgba(62, 39, 35, 0.1);
-                cursor: pointer;
-                transition: transform 0.2s ease;
-            }
-
-            .profile-avatar-frame:hover {
-                transform: scale(1.04) rotate(2deg);
-            }
-
-            .profile-avatar-frame img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .component-badge {
-                display: inline-block;
-                font-size: 0.65rem;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                background: rgba(155, 190, 199, 0.08);
-                color: #79a3ae;
-                padding: 4px 10px;
-                border-radius: 4px;
-                border: 1px solid rgba(155, 190, 199, 0.2);
-                margin-top: 8px;
-                margin-bottom: 20px;
-                font-weight: 700;
-            }
-
-            .hero-panel h1 {
-                font-size: 2.2rem;
-                color: var(--text-main);
-                margin-bottom: 8px;
-            }
-
-            .hero-subtitle {
-                font-size: 0.75rem;
-                font-weight: 400;
-                color: var(--accent-blue);
-                letter-spacing: 0.5px;
-                margin-bottom: 24px;
-            }
-
-            /* Short Portfolio Editor Bio Panel */
-            .bio-container {
-                max-width: 640px;
-                margin: 0 auto 28px auto;
-                font-size: 0.8rem;
-                line-height: 1.6;
-                color: var(--text-main);
-                background: rgba(223, 211, 195, 0.15);
-                border-left: 3px solid var(--accent-brown);
-                padding: 12px 20px;
-                text-align: left;
-            }
-
-            .interactive-display {
-                display: inline-flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 12px 24px;
-                border-radius: 6px;
-                background: var(--pill-bg);
-                border: var(--border-crisp);
-                color: var(--text-main);
-                transition: all 0.15s ease;
-                cursor: pointer;
-                width: calc(100% - 48px);
-                box-sizing: border-box;
-            }
-
-            .interactive-display:hover {
-                border-color: var(--accent-blue);
-            }
-
-            /* ===== tech stack railing===== */
-            .section-header {
-                font-size: 0.8rem;
-                text-transform: uppercase;
-                letter-spacing: 1.2px;
-                color: var(--text-muted);
-                border-bottom: 1px solid var(--border-crisp);
-                padding-bottom: 6px;
-                margin-bottom: 12px;
-            }
-
-            .properties-rail {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .property-card {
-                background: var(--bg-panel);
-                border: var(--border-crisp);
-                border-radius: 8px;
-                overflow: hidden;
-                transition: border-color 0.2s ease;
-            }
-
-            .property-card:hover {
-                border-color: var(--accent-blue);
-            }
-
-            .property-card summary {
-                list-style: none;
-                cursor: pointer;
-                padding: 16px 20px;
-                font-size: 0.9rem;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                user-select: none;
-            }
-
-            .property-card summary::-webkit-details-marker {
-                display: none;
-            }
-
-            /* disclsoure */
-            .property-card summary::after {
-                content: "";
-                display: inline-block;
-                width: 6px;
-                height: 6px;
-                border-right: 2px solid var(--text-muted);
-                border-bottom: 2px solid var(--text-muted);
-                transform: rotate(-45deg);
-                transition: transform 0.2s ease;
-                margin-right: 4px;
-            }
-
-            .property-card[open] summary {
-                background: rgba(223, 211, 195, 0.1);
-                border-bottom: 1px solid var(--border-crisp);
-            }
-
-            .property-card[open] summary::after {
-                transform: rotate(45deg);
-            }
-
-            .property-content {
-                padding: 20px;
-                background: var(--pill-bg);
-                animation: smoothFade 0.15s ease-out;
-            }
-
-            @keyframes smoothFade {
-                from {
-                    opacity: 0;
-                    transform: translateY(-3px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .property-inner-layout {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 20px;
-            }
-
-            .property-group h4 {
-                margin: 0 0 10px 0;
-                font-size: 0.7rem;
-                text-transform: uppercase;
-                color: var(--text-muted);
-                letter-spacing: 0.5px;
-            }
-
-            .pill-matrix {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-
-
-            .token-pill {
-                display: inline-block;
-                padding: 4px 10px;
-                border-radius: 4px;
-                background: var(--bg-canvas);
-                border: var(--border-crisp);
-                color: var(--text-main);
-                font-weight: 700;
-                font-size: 0.7rem;
-                transition: all 0.12s ease;
-                cursor: pointer;
-            }
-
-            .token-pill:hover {
-                border-color: var(--accent-blue);
-                color: var(--text-main);
-                background: var(--accent-blue-warm);
-            }
-
-            .property-group ul {
-                margin: 0;
-                padding-left: 16px;
-                color: var(--text-muted);
-                line-height: 1.6;
-                font-size: 0.75rem;
-            }
-
-            .property-group li {
-                margin-bottom: 4px;
-            }
-
-            /* ===== frame for portfolio image ===== */
-            .media-frame {
-                border: var(--border-crisp);
-                border-radius: 12px;
-                overflow: hidden;
-                line-height: 0;
-                background: var(--bg-panel);
-                box-shadow: 0 8px 24px rgba(62, 39, 35, 0.02);
-            }
-
-            .media-frame img {
-                width: 100%;
-                height: auto;
-                display: block;
-                opacity: 0.9;
-                transition: opacity 0.2s ease;
-            }
-
-            .media-frame img:hover {
-                opacity: 1;
-            }
-
-            /* ===== status===== */
-            .footer-canvas {
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .footer-utility {
-                font-size: 0.7rem;
-                color: var(--text-muted);
-                background: var(--bg-panel);
-                border: var(--border-crisp);
-                padding: 6px 16px;
-                border-radius: 4px;
-                display: inline-block;
-            }
-
-            /* ===== emoji shower canva eleent ===== */
-            .shower-particle {
-                position: fixed;
-                z-index: 9999;
-                top: -50px;
-                font-size: 2rem;
-                pointer-events: none;
-                animation: particleFall 4s linear forwards;
-            }
-
-            @keyframes particleFall {
-                0% {
-                    transform: translateY(0) rotate(0deg);
-                    opacity: 1;
-                }
-                90% {
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(105vh) rotate(360deg);
-                    opacity: 0;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <!-- header wrapper  -->
-        <div class="sticky-header-container">
-            <div class="canvas-container-inner">
-                <!-- progress tracker -->
-                <div class="quest-tracker">
-                    <div class="quest-info" id="level-display">
-                        LVL 1 Workspace
-                    </div>
-                    <div class="progress-rail">
-                        <div class="progress-fill" id="xp-bar"></div>
-                    </div>
-                    <div class="xp-counter" id="xp-numerical">0 / 100 XP</div>
-                </div>
-
-                <!-- center nav bar -->
-                <nav class="nav-wrapper">
-                    <div class="minimal-nav">
-                        <a
-                            class="nav-link"
-                            href="/doc/profile/"
-                            data-xp="nav-profile"
-                        >
-                            <span class="link-title">☕ About Me</span>
-                            <span class="link-desc">get to know me</span>
-                        </a>
-                        <a
-                            class="nav-link"
-                            href="/doc/README"
-                            data-xp="nav-readme"
-                        >
-                            <span class="link-title">📜 README</span>
-                            <span class="link-desc">how i work</span>
-                        </a>
-                        <a
-                            class="nav-link"
-                            href="/doc/blog/"
-                            data-xp="nav-blog"
-                        >
-                            <span class="link-title">✍️ Blog</span>
-                            <span class="link-desc">notes & insights</span>
-                        </a>
-                        <a
-                            class="nav-link"
-                            href="/doc/contact/"
-                            data-xp="nav-contact"
-                        >
-                            <span class="link-title">📬 Contact</span>
-                            <span class="link-desc">connect with me</span>
-                        </a>
-                        <a
-                            class="nav-link"
-                            href="/doc/guestbook/"
-                            data-xp="nav-guestbook"
-                        >
-                            <span class="link-title">📖 Guestbook</span>
-                            <span class="link-desc">leave a note</span>
-                        </a>
-                    </div>
-
-                    <div class="nav-legend">
-                        <div class="legend-item">
-                            <span class="legend-dot dot-profile"></span> config
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot dot-core"></span> source
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot dot-network"></span> system
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-        <div class="canvas-container">
-            <!-- avatar thing -->
-            <div class="hero-panel">
-                <!-- New Profile Avatar Frame -->
-                <div class="profile-avatar-frame" id="avatar-trigger">
-                    <img
-                        src="assets/images/profile-placeholder.png"
-                        alt="pfp here"
-                    />
-                </div>
-
-                <div class="component-badge">❖ Main Module</div>
-                <h1>Cozy Workspace</h1>
-                <div class="hero-subtitle">
-                    IT Systems Engineer • 5+ years exprience •
-
-                <!-- bio short block -->
-                <div class="bio-container">
-                    <span style="color: var(--text-muted)">/</span><br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </div>
-
-                <div class="interactive-display" id="console-trigger">
-                    <span
-                        style="
-                            font-size: 0.6rem;
-                            text-transform: uppercase;
-                            letter-spacing: 0.5px;
-                            font-weight: 700;
-                            color: var(--text-muted);
-                            margin-bottom: 6px;
-                        "
-                        >Output Console // Status_Log</span
-                    >
-                    <i
-                        id="daily-quote"
-                        style="
-                            font-weight: 700;
-                            font-style: normal;
-                            font-size: 0.8rem;
-                            color: var(--accent-blue);
-                        "
-                        >loading...</i
-                    >
-                </div>
-            </div>
-
-            <!-- graphics-->
-            <div class="media-frame">
-                <img
-                    src="assets/images/hero-cyan.png"
-                    alt="Workspace System Graphic Art Frame"
-                />
-            </div>
-
-            <!-- tech stack) -->
-            <div>
-                <div class="section-header">Tech Stack</div>
-                <div class="properties-rail">
-                    <!-- BLOCK 1 -->
-                    <details class="property-card" open data-xp="panel-device">
-                        <summary>🍏 Device Management</summary>
-                        <div class="property-content">
-                            <div class="property-inner-layout">
-                                <div class="property-group">
-                                    <h4>Target Assets</h4>
-                                    <div class="pill-matrix">
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-jamf"
-                                            >Jamf Pro</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-intune"
-                                            >Microsoft Intune</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-wone"
-                                            >Workspace ONE</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-rippling1"
-                                            >Rippling</span
-                                        >
-                                    </div>
-                                </div>
-                                <div class="property-group">
-                                    <h4>Parameters</h4>
-                                    <ul>
-                                        <li>Zero-touch deployment</li>
-                                        <li>Fleet automation</li>
-                                        <li>Endpoint compliance</li>
-                                        <li>Lifecycle management</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-
-                    <!-- BLOCK 2 -->
-                    <details class="property-card" data-xp="panel-identity">
-                        <summary>🔑 Identity & Access</summary>
-                        <div class="property-content">
-                            <div class="property-inner-layout">
-                                <div class="property-group">
-                                    <h4>Directories</h4>
-                                    <div class="pill-matrix">
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-okta"
-                                            >Okta</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-azure"
-                                            >Azure AD</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-gwork"
-                                            >Google Workspace</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-rippling2"
-                                            >Rippling</span
-                                        >
-                                    </div>
-                                </div>
-                                <div class="property-group">
-                                    <h4>Parameters</h4>
-                                    <ul>
-                                        <li>RBAC architecture</li>
-                                        <li>Lifecycle automation</li>
-                                        <li>SSO integrations</li>
-                                        <li>Identity governance</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-
-                    <!-- BLOCK 3 -->
-                    <details class="property-card" data-xp="panel-security">
-                        <summary>🛡️ IT Security Engineering</summary>
-                        <div class="property-content">
-                            <div class="property-inner-layout">
-                                <div class="property-group">
-                                    <h4>Framework</h4>
-                                    <div class="pill-matrix">
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-hitrust"
-                                            >Hitrust</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-soc2"
-                                            >SOC 2</span
-                                        >
-                                        <span
-                                            class="token-pill"
-                                            data-xp="pill-iso"
-                                            >ISO 27001</span
-                                        >
-                                    </div>
-                                </div>
-                                <div class="property-group">
-                                    <h4>Parameters</h4>
-                                    <ul>
-                                        <li>Compliance automation</li>
-                                        <li>Security hardening</li>
-                                        <li>Threat isolation</li>
-                                        <li>Evidence collection</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </details>
-                </div>
-            </div>
-
-            <!-- STATUS SYSTEM FOOTER STRIP -->
-            <div class="footer-canvas">
-                <div
-                    style="
-                        margin-bottom: 8px;
-                        opacity: 0.6;
-                        filter: sepia(0.5) contrast(1.2) brightness(0.85);
-                    "
-                >
-                    <img
-                        src="https://readme-typing-svg.demolab.com?font=Consolas&weight=600&size=14&duration=3000&pause=1000&color=f5eedf&center=true&vCenter=true&width=430&lines=identity+engineering;endpoint+automation;security+operations;systems+design;tea+powered+infrastructure"
-                        alt="System Compiler Values"
-                    />
-                </div>
-                <div class="footer-utility">made with tea 🍵</div>
-            </div>
-        </div>
-
-        <script>
-            const quotes = [
-                "automation is self care",
-                "documentation saves lives",
-                "trust but always...ALWAYS verify",
-                "identity is infrastructure",
-                "security is a design problem",
-            ];
-
-            const today = new Date().getDate();
-            const quote = quotes[today % quotes.length];
-
-            // ===== progress =====
-            let currentXP = 0;
-            const targetMaxXP = 100;
-            const verifiedActions = new Set();
-            let showerIntervalId = null;
-
-            function triggerXPGain(actionId, rewardAmount = 10) {
-                if (verifiedActions.has(actionId)) return;
-                verifiedActions.add(actionId);
-
-                currentXP = Math.min(currentXP + rewardAmount, targetMaxXP);
-                updateUIState();
-            }
-
-            function triggerTeaShower() {
-                if (showerIntervalId !== null) return; // Prevent concurrent trigger instances
-
-                const emojis = ["🍵", "☕", "🫖", "🧁"];
-
-                // emoji shower!!
-                showerIntervalId = setInterval(() => {
-                    const particle = document.createElement("div");
-                    particle.classList.add("shower-particle");
-                    particle.innerText =
-                        emojis[Math.floor(Math.random() * emojis.length)];
-
-                    // Assign explicit randomized layout tracks across horizontal window space
-                    particle.style.left = Math.random() * 100 + "vw";
-                    particle.style.transform = `scale(${Math.random() * 0.6 + 0.7})`;
-
-                    document.body.appendChild(particle);
-
-                    // layout node cleanup
-                    setTimeout(() => {
-                        particle.remove();
-                    }, 4000);
-                }, 150);
-
-                // Gracefully discontinue particle execution loop exactly after 10 seconds boundary
-                setTimeout(() => {
-                    clearInterval(showerIntervalId);
-                    showerIntervalId = null;
-                }, 10000);
-            }
-
-            function updateUIState() {
-                const fillBar = document.getElementById("xp-bar");
-                const textBar = document.getElementById("xp-numerical");
-                const labelDisplay = document.getElementById("level-display");
-
-                fillBar.style.width = currentXP + "%";
-                textBar.innerText = currentXP + " / " + targetMaxXP + " XP";
-
-                if (currentXP >= 100) {
-                    labelDisplay.innerText = "🏆 Master Architect";
-                    labelDisplay.style.color = "var(--accent-brown)";
-                    triggerTeaShower();
-                } else if (currentXP >= 60) {
-                    labelDisplay.innerText = "LVL 3 Engineer";
-                } else if (currentXP >= 30) {
-                    labelDisplay.innerText = "LVL 2 Specialist";
-                }
-            }
-
-            window.onload = () => {
-                document.getElementById("daily-quote").innerText = quote;
-
-                // navigation
-                document.querySelectorAll(".nav-link").forEach((link) => {
-                    link.addEventListener("mouseenter", () => {
-                        const actionId = link.getAttribute("data-xp");
-                        triggerXPGain(actionId, 6);
-                    });
-                });
-
-                // tech stack toggle
-                document.querySelectorAll(".property-card").forEach((panel) => {
-                    panel.addEventListener("toggle", () => {
-                        if (panel.open) {
-                            const actionId = panel.getAttribute("data-xp");
-                            triggerXPGain(actionId, 10);
-                        }
-                    });
-                });
-
-                // attribute trigger
-                document.querySelectorAll(".token-pill").forEach((pill) => {
-                    pill.addEventListener("click", () => {
-                        const actionId = pill.getAttribute("data-xp");
-                        triggerXPGain(actionId, 5);
-                    });
-                });
-
-                // console
-                document
-                    .getElementById("console-trigger")
-                    .addEventListener("click", () => {
-                        triggerXPGain("console-click", 12);
-                    });
-
-                // avatar
-                document
-                    .getElementById("avatar-trigger")
-                    .addEventListener("click", () => {
-                        triggerXPGain("avatar-inspect", 10);
-                    });
-            };
-        </script>
-    </body>
-</html>
+---
+layout: default
+title: Home
+permalink: /
+description: >-
+  Aube Paul, IT engineer in Columbus, Ohio. Endpoints, identity, and
+  security operations for startups. Previously HashiCorp and TravelPerk.
+---
+
+<div class="page-head">
+  <h1>Hi, I&rsquo;m Aube.</h1>
+  <p class="standfirst">
+    I build the IT infrastructure startups run on. Device fleets that
+    set themselves up, identity that grants and revokes itself, and
+    compliance evidence that collects itself while everyone gets on
+    with their day.
+  </p>
+</div>
+
+<div class="prose">
+  <p>
+    I came up through a help desk queue. I got tired of doing the same
+    task fifty times a month, so I learned to script my way out of it.
+    That turned into fleet management, then identity, and then the
+    security and compliance work that keeps auditors calm. Right now
+    I&rsquo;m head of IT at FuturHealth. Before that, HashiCorp and
+    TravelPerk.
+  </p>
+
+  <p>
+    Two things explain how I work. I&rsquo;m always learning something
+    a little outside my lane, and I&rsquo;m always holding a cup of tea
+    while I do it. The learning is why I write any of this down. The
+    tea is non-negotiable.
+  </p>
+</div>
+
+<div class="rule-mark"><span>&#10087;</span></div>
+
+<div class="prose">
+  <h2>Where I&rsquo;ve done it</h2>
+</div>
+
+<ul class="link-list">
+  <li>
+    <span class="ll-name">FuturHealth</span>
+    <span class="ll-note">
+      Head of IT. I&rsquo;m building the function from the ground up:
+      identity, endpoints, and access reviews for a remote team.
+    </span>
+  </li>
+  <li>
+    <span class="ll-name">Fleet</span>
+    <span class="ll-note">
+      Contributor. I write about open source device management, and got
+      certified at the MacAdmins conference.
+    </span>
+  </li>
+  <li>
+    <span class="ll-name">TravelPerk</span>
+    <span class="ll-note">
+      Ran IT for North America. I took the AmTrav acquisition from
+      signed to 300+ devices live in Intune and Jamf on day one, and
+      led the IT half of SOC 2 Type 1.
+    </span>
+  </li>
+  <li>
+    <span class="ll-name">HashiCorp</span>
+    <span class="ll-note">
+      Client platform engineering across 2,000+ devices and 200+
+      software assets. I automated the asset and compliance programs
+      instead of chasing them.
+    </span>
+  </li>
+</ul>
+
+{% if site.posts.size > 0 %}
+  <div class="rule-mark"><span>&#10087;</span></div>
+
+  <div class="prose">
+    <h2>Lately</h2>
+  </div>
+
+  <div class="entries">
+    {% for post in site.posts limit: 3 %}
+      <article class="entry">
+        <p class="meta">
+          <span>{{ post.date | date: "%b %-d, %Y" | downcase }}</span>
+          {% if post.tags and post.tags != empty %}
+            <span class="dot">&middot;</span>
+            <span>{{ post.tags | join: ', ' }}</span>
+          {% endif %}
+        </p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 170 }}</p>
+      </article>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="note">
+  Want to know how I run things before we work together? That&rsquo;s
+  in the <a href="{{ '/doc/readme/' | relative_url }}">README</a>. Every
+  way to reach me is on the
+  <a href="{{ '/doc/contact/' | relative_url }}">contact page</a>.
+</div>

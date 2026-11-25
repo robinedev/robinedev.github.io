@@ -6,12 +6,15 @@
    ============================================================= */
 
 :root {
-  --serif: "Iowan Old Style", "Palatino Linotype", Palatino,
-    "Book Antiqua", Georgia, serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Verdana everywhere. It ships with every OS worth worrying about,
+     so no webfont request. Monospace is kept for code only, where
+     character alignment actually matters. */
+  --serif: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  --mono: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  --code: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --shell: 1040px;
   --rail: 248px;
-  --col: 660px;
+  --col: 640px;
 }
 
 /* ===== day: steeped paper ===== */
@@ -35,18 +38,18 @@
 /* ===== night: last cup ===== */
 [data-theme="night"] {
   color-scheme: dark;
-  --paper: #17130f;
-  --card: #1f1a15;
-  --sunk: #120f0c;
-  --ink: #ece2d4;
-  --ink-soft: #b3a695;
-  --ink-faint: #8a7d6c;
-  --rule: #342c23;
-  --rule-soft: #272019;
-  --accent: #d98e6b;
-  --accent-soft: #e8a684;
-  --leaf: #9aab7e;
-  --wash: rgba(217, 142, 107, 0.09);
+  --paper: #2b241c;
+  --card: #342c23;
+  --sunk: #241e17;
+  --ink: #f2eade;
+  --ink-soft: #c9bcaa;
+  --ink-faint: #9e917f;
+  --rule: #4a4034;
+  --rule-soft: #3b3229;
+  --accent: #e3a07a;
+  --accent-soft: #efb694;
+  --leaf: #a9ba8d;
+  --wash: rgba(227, 160, 122, 0.1);
 }
 
 *,
@@ -61,8 +64,8 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 15.5px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -290,7 +293,7 @@ img { max-width: 100%; height: auto; }
   color: var(--ink-soft);
   line-height: 1.65;
   margin: 0;
-  max-width: 54ch;
+  max-width: 50ch;
 }
 
 /* ===== prose ===== */
@@ -346,7 +349,7 @@ img { max-width: 100%; height: auto; }
 .prose blockquote > :last-child { margin-bottom: 0; }
 
 .prose code {
-  font-family: var(--mono);
+  font-family: var(--code);
   font-size: 0.82em;
   background: var(--sunk);
   padding: 1px 5px;
@@ -354,7 +357,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .prose pre {
-  font-family: var(--mono);
+  font-family: var(--code);
   background: var(--sunk);
   border: 1px solid var(--rule-soft);
   padding: 15px 17px;
@@ -609,4 +612,14 @@ img { max-width: 100%; height: auto; }
   body::before, .rail, .steep { display: none !important; }
   .shell { display: block; padding: 0; }
   body { background: #fff; color: #000; }
+}
+
+/* link-list entries that are themselves links */
+.link-list .ll-name a {
+  background-image: none;
+  color: var(--ink);
+}
+
+.link-list .ll-name a:hover {
+  color: var(--accent);
 }

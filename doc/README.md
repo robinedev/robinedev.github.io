@@ -59,9 +59,10 @@ hand, the third time is a script. If it can't be a script, it becomes
 a runbook with a link someone can actually find. Tribal knowledge is
 an outage waiting for a vacation.
 
-**Boring technology, on purpose.** I pick the tool with the biggest
-community and the dullest release notes. New and shiny is a
-maintenance bill the whole team pays later, usually at 2am.
+**I like new tech, and I test it properly.** I will happily be the
+first on the team to try something, and I usually am. I just will not
+put it in front of a few hundred laptops until I have broken it
+myself first, on purpose, to see how it fails.
 
 **Least privilege is a default, not a project.** Access gets granted
 narrowly and expires on its own. It's much easier to widen a

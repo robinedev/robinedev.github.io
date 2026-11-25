@@ -1,221 +1,86 @@
 <!doctype html>
-<html lang="en" data-theme="{{ site.workspace.default_theme | default: 'dark' }}">
+<html lang="en" data-theme="day">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if page.title and page.url != '/' %}{{ page.title }} &middot; {{ site.author }}{% else %}{{ site.title }}{% endif %}</title>
 
-    {% if page.title %}
-      <title>{{ page.title }} &middot; {{ site.title }}</title>
-    {% else %}
-      <title>{{ site.title }} &middot; {{ site.tagline }}</title>
-    {% endif %}
-
-    {% assign page_desc = page.description | default: site.description %}
-    <meta name="description" content="{{ page_desc | strip_newlines | strip }}" />
+    {% assign desc = page.description | default: site.description %}
+    <meta name="description" content="{{ desc | strip_newlines | strip }}" />
     <meta name="author" content="{{ site.author }}" />
-    <meta name="theme-color" content="#13111b" />
+    <meta name="theme-color" content="#f2ebdf" />
     <link rel="canonical" href="{{ page.url | absolute_url }}" />
-
-    <!-- open graph: makes shared links look intentional -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="{{ site.title }}" />
     <meta property="og:title" content="{{ page.title | default: site.title }}" />
-    <meta property="og:description" content="{{ page_desc | strip_newlines | strip }}" />
+    <meta property="og:description" content="{{ desc | strip_newlines | strip }}" />
     <meta property="og:url" content="{{ page.url | absolute_url }}" />
     <meta name="twitter:card" content="summary" />
 
     <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml" />
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
-    <!-- theme boot: runs before first paint so a returning visitor
-         never sees a flash of the other path. Mirrors the logic in
-         main.js; kept inline on purpose, it must not wait on a
-         network request. -->
+    <!-- set the steep before first paint, so there is no flash -->
     <script>
       (function () {
-        try {
-          var saved = window.localStorage.getItem("workspace-theme");
-          if (saved === "nohr" || saved === "hoshido") {
-            document.documentElement.setAttribute("data-theme", saved);
-            return;
-          }
-        } catch (err) {}
-        if (window.matchMedia("(prefers-color-scheme: light)").matches) {
-          document.documentElement.setAttribute("data-theme", "hoshido");
-        } else {
-          document.documentElement.setAttribute("data-theme", "nohr");
+        var t;
+        try { t = localStorage.getItem("steep"); } catch (e) {}
+        if (t !== "day" && t !== "night") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
         }
+        document.documentElement.setAttribute("data-theme", t);
       })();
     </script>
   </head>
 
   <body>
-    <a class="skip-link" href="#content">Skip to content</a>
+    <a class="skip" href="#content">Skip to content</a>
 
-    <!-- ===== title bar ===== -->
-    <header class="ide-titlebar">
-      <a class="titlebar-crest" href="{{ '/' | relative_url }}">
-        {% include crest.html %}
-        <span>{{ site.title | downcase | replace: ' ', '-' }}</span>
-      </a>
-
-      <span class="titlebar-path">
-        <span class="path-sep">&mdash;</span>
-        {{ page.path | default: 'index.html' }}
-      </span>
-
-      <span class="titlebar-spacer"></span>
-
-      <button
-        type="button"
-        class="palette-hint"
-        data-palette-open
-        aria-label="Open the command palette"
-      >
-        <span>Go to</span>
-        <kbd id="palette-kbd">&#8984;K</kbd>
-      </button>
-    </header>
-
-    <!-- ===== tab bar =====
-         A post is not its own tab, so it marks the Blog tab instead. -->
-    {% assign active_url = page.url %}
-    {% if page.layout == 'post' %}{% assign active_url = '/doc/blog/' %}{% endif %}
-    <nav class="ide-tabbar" aria-label="Pages">
-      {% for item in site.data.nav %}
-        <a
-          class="ide-tab"
-          href="{{ item.url | relative_url }}"
-          data-xp="tab-{{ item.title | slugify }}"
-          {% if active_url == item.url %}aria-current="page"{% endif %}
-        >
-          <span class="tab-dot dot-{{ item.kind }}" aria-hidden="true"></span>
-          <span>{{ item.file }}</span>
-        </a>
-      {% endfor %}
-    </nav>
-
-    <!-- ===== content ===== -->
-    <main class="canvas-container" id="content">
-      {{ content }}
-
-      <div class="footer-canvas">
-        <span class="footer-utility">
-          {{ site.workspace.status_note | default: 'made with tea' }} &#127861;
-        </span>
-      </div>
-    </main>
-
-    <!-- ===== status bar ===== -->
-    <footer class="ide-statusbar">
-      <span class="status-item">
-        <span class="status-glyph" aria-hidden="true">&#9095;</span>
-        {{ site.workspace.branch | default: 'main' }}
-      </span>
-
-      <span class="status-item" data-optional="true">
-        {{ page.path | default: 'index.html' }}
-      </span>
-
-      <span class="status-item" data-optional="true">UTF-8</span>
-
-      <span class="status-spacer"></span>
-
-      <button
-        type="button"
-        class="status-button"
-        data-palette-open
-        aria-label="Open the command palette"
-      >
-        <span class="path-glyph" aria-hidden="true">&#9906;</span>
-        <span>palette</span>
-      </button>
-
-      <button
-        type="button"
-        class="status-button"
-        id="theme-toggle"
-        aria-label="Switch theme"
-      >
-        <span class="path-glyph" aria-hidden="true">&#9789;</span>
-        <span class="path-label">nohr</span>
-      </button>
-
-      <span class="status-item" id="status-clock" data-optional="true">--:--</span>
-    </footer>
-
-    <!-- ===== command palette ===== -->
-    <div class="palette" id="palette" data-open="false" role="dialog" aria-modal="true" aria-label="Command palette">
-      <div class="palette-panel">
-        <div class="palette-input-row">
-          <span class="palette-caret" aria-hidden="true">&gt;</span>
-          <input
-            type="text"
-            class="palette-input"
-            id="palette-input"
-            placeholder="jump to a page or run a command"
-            autocomplete="off"
-            spellcheck="false"
-            aria-label="Filter pages and commands"
+    <div class="shell">
+      <aside class="rail">
+        <div class="portrait">
+          <img
+            src="{{ '/assets/images/avatar.png' | relative_url }}"
+            alt="{{ site.author }}"
+            width="132"
+            height="132"
           />
         </div>
 
-        <ul class="palette-list" id="palette-list" role="listbox">
-          {% for item in site.data.nav %}
-            <li role="option">
-              <a
-                class="palette-item"
-                data-palette-entry
-                href="{{ item.url | relative_url }}"
-              >
-                <span class="pi-icon" aria-hidden="true">{{ item.icon }}</span>
-                <span>{{ item.title }}</span>
-                <span class="pi-desc">{{ item.file }}</span>
-              </a>
-            </li>
-          {% endfor %}
-
-          <li role="option">
-            <button type="button" class="palette-item" data-palette-entry data-command="theme">
-              <span class="pi-icon" aria-hidden="true">&#9728;</span>
-              <span>Switch path (theme)</span>
-              <span class="pi-desc">nohr / hoshido</span>
-            </button>
-          </li>
-          <li role="option">
-            <button type="button" class="palette-item" data-palette-entry data-command="copy-url">
-              <span class="pi-icon" aria-hidden="true">&#128279;</span>
-              <span>Copy link to this page</span>
-              <span class="pi-desc">clipboard</span>
-            </button>
-          </li>
-          <li role="option">
-            <button type="button" class="palette-item" data-palette-entry data-command="top">
-              <span class="pi-icon" aria-hidden="true">&#8593;</span>
-              <span>Scroll to top</span>
-              <span class="pi-desc">home</span>
-            </button>
-          </li>
-          <li role="option">
-            <button type="button" class="palette-item" data-palette-entry data-command="tea">
-              <span class="pi-icon" aria-hidden="true">&#127861;</span>
-              <span>Brew tea</span>
-              <span class="pi-desc">do not ask</span>
-            </button>
-          </li>
-        </ul>
-
-        <div class="palette-empty" id="palette-empty" hidden>no matches</div>
-
-        <div class="palette-foot">
-          <span><kbd>&#8593;</kbd><kbd>&#8595;</kbd> move</span>
-          <span><kbd>enter</kbd> open</span>
-          <span><kbd>esc</kbd> close</span>
+        <div class="rail-ident">
+          <p class="rail-name"><a href="{{ '/' | relative_url }}">{{ site.author }}</a></p>
+          <p class="rail-role">{{ site.role }}</p>
         </div>
-      </div>
-    </div>
 
-    <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+        <p class="rail-bio">{{ site.bio }}</p>
+
+        <nav class="rail-nav" aria-label="Pages">
+          {% for item in site.data.nav %}
+            <a href="{{ item.url | relative_url }}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </nav>
+
+        {% if site.now %}
+          <div class="rail-now">
+            <p class="block-title">currently</p>
+            <ul class="now-list">
+              {% for row in site.now %}
+                <li><span>{{ row.label }}</span>{{ row.text }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div class="rail-foot">
+          <button type="button" class="steep" id="steep">day steep</button>
+        </div>
+      </aside>
+
+      <main class="column" id="content">
+        {{ content }}
+      </main>
+    </div>
 
     <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
   </body>

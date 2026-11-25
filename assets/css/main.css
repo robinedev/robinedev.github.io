@@ -6,11 +6,16 @@
    ============================================================= */
 
 :root {
-  /* Verdana everywhere. It ships with every OS worth worrying about,
-     so no webfont request. Monospace is kept for code only, where
-     character alignment actually matters. */
+  /* Verdana for reading and for the furniture. Georgia for the
+     headings, which warms the whole page up: Matthew Carter drew both
+     of them for screens, so they sit together properly. Both ship
+     with every OS worth worrying about, so there is no webfont
+     request. Monospace is kept for code only, where character
+     alignment actually matters. */
   --serif: Verdana, Geneva, "DejaVu Sans", sans-serif;
   --mono: Verdana, Geneva, "DejaVu Sans", sans-serif;
+  --display: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype",
+    "Book Antiqua", "URW Palladio L", serif;
   --code: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --shell: 1040px;
   --rail: 248px;
@@ -155,6 +160,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .rail-name {
+  font-family: var(--display);
   font-size: 1.32rem;
   font-weight: 600;
   line-height: 1.25;
@@ -281,6 +287,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .page-head h1 {
+  font-family: var(--display);
   font-size: 2.1rem;
   font-weight: 600;
   line-height: 1.15;
@@ -289,7 +296,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .page-head .standfirst {
-  font-size: 1.04rem;
+  font-size: 1.02rem;
   color: var(--ink-soft);
   line-height: 1.65;
   margin: 0;
@@ -301,6 +308,7 @@ img { max-width: 100%; height: auto; }
 .prose > :last-child { margin-bottom: 0; }
 
 .prose h1 {
+  font-family: var(--display);
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -308,14 +316,16 @@ img { max-width: 100%; height: auto; }
 }
 
 .prose h2 {
-  font-size: 1.3rem;
+  font-family: var(--display);
+  font-size: 1.35rem;
   font-weight: 600;
   margin: 42px 0 12px;
   letter-spacing: -0.01em;
 }
 
 .prose h3 {
-  font-size: 1.06rem;
+  font-family: var(--display);
+  font-size: 1.1rem;
   font-weight: 600;
   margin: 30px 0 8px;
 }
@@ -472,7 +482,8 @@ img { max-width: 100%; height: auto; }
 
 .entry h2,
 .entry h3 {
-  font-size: 1.22rem;
+  font-family: var(--display);
+  font-size: 1.26rem;
   font-weight: 600;
   margin: 0 0 7px;
   letter-spacing: -0.01em;
@@ -561,7 +572,7 @@ img { max-width: 100%; height: auto; }
   fill: var(--ink-faint);
 }
 
-.fig-title { font-family: var(--serif); font-size: 14px; font-weight: 600; fill: var(--ink); }
+.fig-title { font-family: var(--display); font-size: 14px; font-weight: 600; fill: var(--ink); }
 .fig-sub { font-family: var(--mono); font-size: 10.5px; fill: var(--ink-soft); }
 
 /* ===== responsive ===== */
@@ -623,3 +634,62 @@ img { max-width: 100%; height: auto; }
 .link-list .ll-name a:hover {
   color: var(--accent);
 }
+
+/* ===== comments ===== */
+.comments {
+  margin-top: 10px;
+}
+
+.comments-open {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.94rem;
+  color: var(--accent);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+}
+
+.comments-open:hover {
+  color: var(--accent-soft);
+  background-image: linear-gradient(var(--accent-soft), var(--accent-soft));
+}
+
+.comments-open[hidden] { display: none; }
+
+.comments-mount:not(:empty) { margin-top: 18px; }
+
+.comments-fine {
+  margin: 16px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+}
+
+/* utterances writes these two rules into a <style> tag of its own,
+   which our policy blocks on purpose. Same rules, served from here. */
+.utterances {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.utterances-frame {
+  color-scheme: light;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 1px;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+[data-theme="night"] .utterances-frame { color-scheme: dark; }

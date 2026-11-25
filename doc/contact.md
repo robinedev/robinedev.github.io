@@ -11,7 +11,7 @@ Happy to talk shop: endpoint management, identity plumbing, compliance
 automation, or whether a tool is worth its licence.
 
 | where | link | best for |
-| :--- | :--- | :--- |
+| --- | --- | --- |
 | LinkedIn | [linkedin.com/in/aubep](https://www.linkedin.com/in/aubep/) | work conversations and intros |
 | GitHub | [github.com/robinedev](https://github.com/robinedev) | code, issues, pull requests |
 | Email | `you [at] example.com` | anything long, formal, or with attachments |

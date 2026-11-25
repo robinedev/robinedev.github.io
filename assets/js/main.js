@@ -33,7 +33,7 @@
     }
     var btn = document.getElementById("steep");
     if (btn) {
-      btn.textContent = theme === "night" ? "\u25D3 night steep" : "\u25D2 day steep";
+      btn.textContent = theme === "night" ? "◓ night steep" : "◒ day steep";
       btn.setAttribute("aria-label",
         "Switch to " + (theme === "night" ? "day" : "night") + " steep");
     }

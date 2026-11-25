@@ -3,17 +3,16 @@ layout: default
 title: Home
 permalink: /
 description: >-
-  Aube Paul, IT engineer in Columbus, Ohio. Endpoints, identity, and
-  security operations for startups. Previously HashiCorp and TravelPerk.
+  Aube Paul, IT engineer. Endpoints, identity, and security operations
+  for startups. Previously HashiCorp and TravelPerk.
 ---
 
 <div class="page-head">
   <h1>Hi, I&rsquo;m Aube.</h1>
   <p class="standfirst">
-    I build the IT infrastructure startups run on. Device fleets that
-    set themselves up, identity that grants and revokes itself, and
-    compliance evidence that collects itself while everyone gets on
-    with their day.
+    I&rsquo;m the person who builds the things that get you every
+    application you need on your laptop, keeps your devices and
+    software secure, and makes your everyday workday faster.
   </p>
 </div>
 
@@ -33,35 +32,39 @@ description: >-
   </p>
 </div>
 
-{% if site.posts.size > 0 %}
-  <div class="rule-mark"><span>&#10087;</span></div>
+<div class="rule-mark"><span>&#10087;</span></div>
 
-  <div class="prose">
-    <h2>Lately</h2>
-  </div>
+<div class="prose">
+  <h2>Where to go</h2>
+</div>
 
-  <div class="entries">
-    {% for post in site.posts limit: 3 %}
-      <article class="entry">
-        <p class="meta">
-          <span>{{ post.date | date: "%b %-d, %Y" | downcase }}</span>
-          {% if post.tags and post.tags != empty %}
-            <span class="dot">&middot;</span>
-            <span>{{ post.tags | join: ', ' }}</span>
-          {% endif %}
-        </p>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.description | default: post.excerpt | strip_html | truncate: 170 }}</p>
-      </article>
-    {% endfor %}
-  </div>
-{% endif %}
+<ul class="link-list">
+  <li>
+    <span class="ll-name"><a href="{{ '/doc/readme/' | relative_url }}">README</a></span>
+    <span class="ll-note">Get to know me and how I work. The best
+      starting point if we're going to work together.</span>
+  </li>
+  <li>
+    <span class="ll-name"><a href="{{ '/doc/profile/' | relative_url }}">About</a></span>
+    <span class="ll-note">My career, what I've shipped, and what I get
+      up to when I'm not in a terminal.</span>
+  </li>
+  <li>
+    <span class="ll-name"><a href="{{ '/doc/blog/' | relative_url }}">Blog</a></span>
+    <span class="ll-note">What I'm thinking about. Tech news, what I'm
+      building, and notes from projects and events.</span>
+  </li>
+  <li>
+    <span class="ll-name"><a href="{{ '/doc/contact/' | relative_url }}">Contact</a></span>
+    <span class="ll-note">Reach out, or book a tea chat.</span>
+  </li>
+  <li>
+    <span class="ll-name"><a href="{{ '/doc/guestbook/' | relative_url }}">Guestbook</a></span>
+    <span class="ll-note">Leave me a message.</span>
+  </li>
+</ul>
 
 <div class="note">
-  Want to know how I run things before we work together? That&rsquo;s
-  in the <a href="{{ '/doc/readme/' | relative_url }}">README</a>. The
-  longer version of who I am lives on
-  <a href="{{ '/doc/profile/' | relative_url }}">about</a>, and every
-  way to reach me is on the
-  <a href="{{ '/doc/contact/' | relative_url }}">contact page</a>.
+  New here? Start with the
+  <a href="{{ '/doc/readme/' | relative_url }}">README</a>.
 </div>

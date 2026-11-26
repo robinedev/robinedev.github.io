@@ -17,6 +17,12 @@ bio: >-
   paperwork an audit asks for. I automate the boring half so nobody
   does the same thing twice. Always trying new tech, usually mid-cup.
 
+# sidebar note, shown on every page. delete to hide it.
+blurb: >-
+  This is where I post my thoughts on the tech world, what I'm
+  building, how I'm learning it, and some personal things along the
+  way.
+
 # the sidebar block. edit freely, delete to hide it.
 now:
   - label: learning

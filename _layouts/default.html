@@ -71,6 +71,15 @@
 
         <p class="rail-bio">{{ site.bio }}</p>
 
+        {%- comment -%}
+          Part of the one shared sidebar, so it reads the same on
+          every page. Edit the text in _config.yml, or delete the
+          blurb key there to hide it everywhere at once.
+        {%- endcomment -%}
+        {% if site.blurb %}
+          <p class="rail-blurb">{{ site.blurb }}</p>
+        {% endif %}
+
         <nav class="rail-nav" aria-label="Pages">
           {% for item in site.data.nav %}
             <a href="{{ item.url | relative_url }}"

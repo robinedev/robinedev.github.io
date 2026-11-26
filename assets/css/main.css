@@ -187,6 +187,16 @@ img { max-width: 100%; height: auto; }
   margin: 0;
 }
 
+.rail-blurb {
+  font-family: var(--display);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--ink-faint);
+  margin: 14px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid var(--rule-soft);
+}
+
 /* nav */
 .rail-nav {
   display: flex;

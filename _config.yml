@@ -13,16 +13,16 @@ description: >-
 author: Aube Paul
 role: IT engineer
 bio: >-
-  I automate the boring half of IT, mostly endpoints, identity, and
-  the paperwork an audit asks for, so nobody does it twice. I love
-  trying new tech, and I’m perpetually mid-cup.
+  Startup IT, which in practice means endpoints, identity, and the
+  paperwork an audit asks for. I automate the boring half so nobody
+  does the same thing twice. Always trying new tech, usually mid-cup.
 
 # the sidebar block. edit freely, delete to hide it.
 now:
   - label: learning
-    text: TypeScript, and Docker
+    text: Okta, and TypeScript
   - label: reading
-    text: the MacAdmins Slack, most days
+    text: I Have No Mouth and I Must Scream, by Harlan Ellison
   - label: steeping
     text: hibiscus
 url: https://robinedev.github.io

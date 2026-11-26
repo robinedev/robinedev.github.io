@@ -46,9 +46,17 @@ description: >-
     {% endfor %}
   </div>
 {% else %}
-  <div class="note">
-    Nothing published yet. Drop a markdown file in <code>_posts/</code>
-    named <code>YYYY-MM-DD-your-slug.md</code> and it shows up here on
-    its own.
-  </div>
+  {% comment %}
+    No posts yet, so this page renders the intro and stops. A reader
+    sees nothing here, not a note about empty folders.
+
+    To publish the first one: write it in _drafts/, then move it to
+    _posts/ and rename it with the date in front, like
+    2026-03-14-what-i-learned.md. The date in the filename is what
+    Jekyll goes by, so it has to match the one in the front matter.
+    There is a scaffold ready to go in _drafts/your-first-post.md.
+
+    This block is a Liquid comment, so it is stripped at build time
+    and never reaches the browser or the page source.
+  {% endcomment %}
 {% endif %}

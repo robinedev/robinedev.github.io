@@ -698,3 +698,29 @@ img { max-width: 100%; height: auto; }
   height: 100%;
   border: 0;
 }
+
+/* ===== long-form reading =====
+   Georgia for the parts written to be read end to end, which is the
+   blog and the posts. Verdana keeps all the furniture around them.
+   Code stays monospace, since .prose code sets its own family. */
+.longform .standfirst,
+.longform.prose,
+.longform .entry p {
+  font-family: var(--display);
+}
+
+.longform.prose,
+.longform .entry p {
+  font-size: 1.06rem;
+  line-height: 1.78;
+}
+
+.longform .entry p.meta { font-family: var(--mono); font-size: 0.68rem; }
+
+article.longform .prose {
+  font-family: var(--display);
+  font-size: 1.06rem;
+  line-height: 1.78;
+}
+
+article.longform .standfirst { font-family: var(--display); }

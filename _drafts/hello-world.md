@@ -25,13 +25,15 @@ come from doing it in public, badly, for a while first.
 
 Three things, roughly.
 
-**Things being built.** Right now that's Okta, which is what a lot of
-places use to handle logins, and which seems worth pulling apart
-properly on a project of my own rather than only ever seeing it from
-the outside. After that the homelab, plus Docker, and TypeScript,
-mostly as a way into Pulumi so the setup can be written as code
-instead of a pile of clicking. Expect some fairly basic posts while
-all of that gets figured out.
+**Things being built.** Right now that's [Okta](https://www.okta.com),
+which is what a lot of places use to handle logins, and which seems
+worth pulling apart properly on a project of my own rather than only
+ever seeing it from the outside. After that the homelab, plus
+[Docker](https://www.docker.com) and
+[TypeScript](https://www.typescriptlang.org), TypeScript mostly as a
+way into [Pulumi](https://www.pulumi.com) so the setup can be written
+as code instead of a pile of clicking. Expect some fairly basic posts
+while all of that gets figured out.
 
 **Tech news worth a second look.** Something gets announced, the
 coverage says one thing, and what it actually turns out to mean is

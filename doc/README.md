@@ -18,24 +18,26 @@ written down.
 
 ## What happens when you send a request
 
-It comes back to you as a sketch first.
+You get to see what I understood before I go and build it.
 
-Before anything gets built, the ask returns in my words, usually
-drawn, so we can check it says what you meant. That feels slow for
-about ten minutes. It saves weeks.
+Usually that is a quick sketch or a short write up sent back your way,
+so there's a chance to catch anything I picked up wrong. It takes
+about ten minutes and it has saved me weeks of rework over the years.
 
-Pictures land faster than paragraphs here, so a napkin drawing or a
-photo of a whiteboard is a genuinely good thing to send. If drawing
-isn't your thing, say it however's easiest and it'll come back to you
-drawn.
+However you want to send something over is good with me. A paragraph,
+a quick call, a photo of a whiteboard, all equally welcome. Diagrams
+happen to be what sticks in my head, so if you already have one I
+would love to see it, and if you don't, I'm glad to draw one up and
+walk through it with you.
 
 {% include diagram-workflow.html %}
 
-Anything with real consequences gets an RFC instead of an argument in
-a thread. The
+For anything with real consequences, I like to write it up as an RFC
+so the reasoning is out in the open and people have room to weigh in
+properly. The
 [HashiCorp template](https://www.hashicorp.com/en/how-hashicorp-works/articles/rfc-template)
-is the usual starting point, though whatever your team already runs on
-is fine.
+is my usual starting point, and I'm happy to use whatever your team
+already runs on instead.
 
 ## When to catch me
 

@@ -13,30 +13,32 @@ reading_time: "2 min read"
 > `2026-03-14-hello-world.md`, and match the date to the one in the
 > front matter above. Change anything here that doesn't sound like you.
 
-Nobody handed me a map for this job, and I don't think many people get
-one. There are a lot of ways into IT and hardly any of them are
-written down anywhere, so this is somewhere to write a few of them
-down.
+Most of what I know about this stuff came from bumping into it, and
+hardly any of that gets written down anywhere. So this is a place to
+write some of it down while it's happening, mistakes and dead ends
+included.
 
-The rest of it is practice. Getting better at explaining things seems
-to only happen in public, badly, for a while first.
+The other reason is practice. Explaining things clearly seems to only
+come from doing it in public, badly, for a while first.
 
 ## What you'll find here
 
 Three things, roughly.
 
-**Tech news worth an opinion.** What got announced, what the coverage
-skipped, and what it actually changes for anyone running a fleet.
+**Things being built.** Right now that's Okta, which is what a lot of
+places use to handle logins, and which seems worth pulling apart
+properly on a project of my own rather than only ever seeing it from
+the outside. After that the homelab, plus Docker, and TypeScript,
+mostly as a way into Pulumi so the setup can be written as code
+instead of a pile of clicking. Expect some fairly basic posts while
+all of that gets figured out.
 
-**Whatever's being built at the moment.** Right now that's Okta, which
-turns up everywhere and is worth pulling apart properly on a project
-of my own. After that the homelab, plus TypeScript and Docker,
-TypeScript mainly as a way into Pulumi and doing the infrastructure
-side as code. Expect some basic posts while all of that gets figured
-out.
+**Tech news worth a second look.** Something gets announced, the
+coverage says one thing, and what it actually turns out to mean is
+usually a little different.
 
 **Notes from projects and events.** What I expected going in, what
-surprised me, and the one thing worth telling someone who's going next
+surprised me, and the one thing worth passing on to whoever goes next
 year.
 
 Some of it will be notes to myself that happen to be public. The
@@ -45,20 +47,20 @@ loud, not a polished guide.
 
 ## What this won't be
 
-A posting schedule I don't keep. A writeup of every release. Anything
-I haven't done myself.
+A posting schedule I don't keep, or anything I haven't actually tried
+myself.
 
 ## Come say something
 
-Corrections, post requests, and war stories about a rollout that went
-sideways are all welcome in the
+Corrections, requests, and stories about something that went sideways
+are all welcome in the
 [guestbook]({{ '/doc/guestbook/' | relative_url }}). There's a
 calendar link over on
 [contact]({{ '/doc/contact/' | relative_url }}) too, if a tea chat is
 more your thing.
 
 Part of why this is public is accountability. The homelab has been
-sitting at "started" since August and it's nowhere near where it
-should be, and writing things down makes it harder to let them drift
-quietly. A year from now I'd like there to be a record of what got
-learned here, and maybe a post that saves someone else an afternoon.
+sitting at "started" since August and it's nowhere near where I want
+it, and writing things down makes it harder to let them drift quietly.
+A year from now I'd like there to be a record of what got figured out
+here, and maybe something that saves someone else an afternoon.

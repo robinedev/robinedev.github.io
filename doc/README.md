@@ -25,7 +25,7 @@ so there's a chance to catch anything I picked up wrong. It takes
 about ten minutes and it has saved me weeks of rework over the years.
 
 However you want to send something over is good with me. A paragraph,
-a quick call, a photo of a whiteboard, all equally welcome. Diagrams
+a quick call, a rough visual mockup, all equally welcome. Diagrams
 happen to be what sticks in my head, so if you already have one I
 would love to see it, and if you don't, I'm glad to draw one up and
 walk through it with you.

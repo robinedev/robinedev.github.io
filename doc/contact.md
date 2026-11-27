@@ -7,13 +7,13 @@ description: Ways to reach me, plus a link to book a tea chat.
 
 # Say hi
 
-I love setting up **tea chats**. Like coffee chats, but better.
+I love setting up **tea chats**! They're like coffee chats, but better.
 
 [Pick a time that works for you](https://calendar.app.google/N1T7zn7EtQMpVNeX8)
 
-Working on something interesting? I love to help. Bring me a project,
-a problem, or a half-formed idea. Endpoints, identity, audits, or
-whatever you're stuck on this week.
+Working on something interesting? I'd love to help. Bring me a
+project, a problem, or a half-formed idea, whether that's endpoints,
+identity, audits, or whatever's got you stuck this week.
 
 | where | link |
 | --- | --- |
@@ -21,6 +21,6 @@ whatever you're stuck on this week.
 | GitHub | [github.com/robinedev](https://github.com/robinedev) |
 | Email | TBA |
 
-If you're emailing, put what it's about in the subject line so I can
-find it again later. Then tell me what you're trying to do, not just
-what broke, and paste the error text so I can search it.
+If you're emailing, pop what it's about in the subject line so I can
+find it again later. Then tell me what you're trying to do rather than
+just what broke, and paste the error text in so I can search it.

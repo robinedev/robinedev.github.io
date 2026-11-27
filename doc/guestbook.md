@@ -8,7 +8,7 @@ comments: true
 
 # Guestbook
 
-Drop a hello, pitch a post idea, or leave some feedback.
+Drop a hello, pitch a post idea, or leave me some feedback.
 
 Good things to leave here:
 

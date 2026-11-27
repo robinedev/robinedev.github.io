@@ -2,62 +2,62 @@
 layout: post
 title: "Hello world"
 description: >-
-  Why there's a blog here now, and what I'm planning to put in it.
+  Why there's suddenly a blog here, and what I'm planning to put in it.
 date: 2026-01-01 09:00:00 -0500
 tags: []
-reading_time: "3 min read"
+reading_time: "2 min read"
 ---
 
-> **This is a scaffold, not a post.** Every blockquote like this one is
-> a prompt for you, so delete them as you write. Nothing in `_drafts/`
-> reaches the site, so leave this half finished for as long as you
-> like. When it's ready, move it to `_posts/` and rename it with the
-> date in front, like `2026-03-14-hello-world.md`, matching the date in
-> the front matter above. Fill in `tags:` with whatever it ends up
-> being about.
+> Draft notes, delete this block before you publish. Anything in square
+> brackets is yours to fill in or cut, and everything else is a starting
+> point you can keep, reword, or bin. To publish: move this file into
+> `_posts/`, rename it with the date in front like
+> `2026-03-14-hello-world.md`, match the date to the one in the front
+> matter, and fill in `tags:`.
 
-> **Open with why, not with hello.** Your style guide says lead with
-> the problem or the stakes, and skip the throat-clearing. So no
-> "welcome to my blog, I'll be posting about tech." Start instead with
-> the moment that made you want somewhere to write things down: a fix
-> you couldn't find written up anywhere, a thing you've now explained
-> out loud four times, a rollout that went sideways and taught you
-> something worth passing on. One specific, true thing in sentence
-> one.
+[Open with the moment that made you want this. Something like: last
+week I explained the same fix for the fourth time, and somewhere
+around the third I thought, this should be written down somewhere.] So, here we are.
 
-## Who's writing this
+I'm Aube. I do startup IT, mostly where device management meets
+identity, which in practice means endpoints, access, and the paperwork
+an audit asks for. I came up through a help desk queue at an MSP for
+law firms, got tired of doing the same task fifty times a month, and
+learned to script my way out of it. These days most of the job is
+automating the boring half so nobody has to do the same thing twice.
 
-> **Keep this short, two or three sentences.** The About page does the
-> long version, so this is just enough that a stranger knows who's
-> talking. Things you've got to hand: you came up from a help desk
-> queue at an MSP for law firms, you work where device management meets
-> identity, and you automate the boring half so nobody does the same
-> thing twice.
+## What you'll find here
 
-## What I'm planning to put here
+Three things, roughly.
 
-> **The three kinds you already named.** Tech news you've got opinions
-> about, whatever you're building right now, and notes from projects
-> and events. Say what each one actually looks like rather than listing
-> them, and be honest that some posts will be notes to yourself that
-> happen to be public.
+**Tech news I've got opinions about.** What got announced, what the
+coverage skipped, and what it actually changes for anyone running a
+fleet.
 
-> **Worth saying plainly:** what you wished existed when you were
-> starting out, and what you'll write because you couldn't find it.
+**Whatever I'm building.** The problem, the first thing I tried, why
+it didn't hold, and where it ended up. [Right now that's
+<the thing you're in the middle of>.]
 
-## What I'm not going to do
+**Notes from projects and events.** What I expected going in, what
+surprised me, and the one thing worth telling someone who's going next
+year.
 
-> **Optional, but it sets expectations and it's very you.** A schedule
-> you won't keep, a post about every release, SEO filler. Saying what
-> this isn't makes the rest more believable.
+Some of it will be notes to myself that happen to be public, and I'm
+fine with that. The writing I've gotten the most out of was usually
+someone thinking out loud, not a polished guide.
+
+## What this won't be
+
+A posting schedule I don't keep. A writeup of every release. Anything
+I haven't done myself.
 
 ## Come say something
 
-> **End with an actual ending, not a summary.** Point at the guestbook
-> or a tea chat, and invite the thing you genuinely want: corrections,
-> a post request, a war story. One line is plenty.
+If you've got a correction, a post request, or a war story about a
+rollout that went sideways, the
+[guestbook]({{ '/doc/guestbook/' | relative_url }}) is open. I'm also
+always up for a tea chat, so there's a calendar link over on
+[contact]({{ '/doc/contact/' | relative_url }}) if you'd rather talk.
 
-> **Before you publish, do the self-review pass:** no em dashes, no
-> hyperbole words, headings in sentence case, filler cut ("very",
-> "really", "just", "actually"), and no AI-sounding intro. Then delete
-> every blockquote on this page, including this one.
+[One closing line in your own words. Maybe something you'd like to be
+true about this blog a year from now.]

@@ -61,7 +61,60 @@
     }
   }
 
+  /* Tag filtering on the blog, driven by the URL hash so that a
+     filtered view is just a link you can send to someone. */
+  function tags() {
+    var bar = document.getElementById("tag-filter");
+    var list = document.getElementById("entries");
+    if (!bar || !list) { return; }
+
+    var chips = bar.querySelectorAll(".tag-chip");
+    var entries = list.querySelectorAll(".entry");
+    var empty = document.getElementById("tag-empty");
+    var search = document.getElementById("tag-search");
+
+    function wanted() {
+      var h = (window.location.hash || "").replace(/^#/, "").toLowerCase();
+      return h === "all" ? "" : h;
+    }
+
+    function apply() {
+      var tag = wanted();
+      var typed = search ? search.value.trim().toLowerCase() : "";
+      var shown = 0;
+      var i;
+
+      for (i = 0; i < entries.length; i++) {
+        var owned = " " + (entries[i].getAttribute("data-tags") || "") + " ";
+        var ok = true;
+        if (tag) { ok = owned.indexOf(" " + tag + " ") !== -1; }
+        if (ok && typed) { ok = owned.indexOf(typed) !== -1; }
+        entries[i].hidden = !ok;
+        if (ok) { shown++; }
+        entries[i].classList.toggle("is-first", ok && shown === 1);
+      }
+
+      for (i = 0; i < chips.length; i++) {
+        var own = chips[i].getAttribute("data-tag") || "";
+        var on = own === tag;
+        chips[i].classList.toggle("is-on", on);
+        if (on) { chips[i].setAttribute("aria-current", "true"); }
+        else { chips[i].removeAttribute("aria-current"); }
+        chips[i].hidden = Boolean(typed) && Boolean(own) &&
+          own.indexOf(typed) === -1;
+      }
+
+      if (empty) { empty.hidden = shown !== 0; }
+    }
+
+    if (search) { search.addEventListener("input", apply); }
+    window.addEventListener("hashchange", apply);
+    apply();
+  }
+
   function start() {
+    tags();
+
     var saved = get();
     if (saved !== "day" && saved !== "night") {
       saved = window.matchMedia("(prefers-color-scheme: dark)").matches

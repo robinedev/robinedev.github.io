@@ -25,9 +25,28 @@ description: >-
 <div class="rule"></div>
 
 {% if site.posts.size > 0 %}
-  <div class="entries longform">
+  {% assign tag_list = site.tags | sort %}
+  {% if tag_list.size > 0 %}
+    <div class="tag-filter" id="tag-filter">
+      <label class="block-title" for="tag-search">filter by tag</label>
+      <input type="search" id="tag-search" class="tag-search"
+             placeholder="start typing a tag" autocomplete="off" />
+      <div class="tag-cloud">
+        <a class="tag-chip is-on" href="#all" data-tag="">everything</a>
+        {% for t in tag_list %}
+          <a class="tag-chip" href="#{{ t[0] | slugify }}" data-tag="{{ t[0] | slugify }}">#{{ t[0] }}<span class="tag-count">{{ t[1] | size }}</span></a>
+        {% endfor %}
+      </div>
+      <p class="tag-empty" id="tag-empty" hidden>
+        Nothing filed under that one yet.
+        <a href="#all">Show everything</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <div class="entries longform" id="entries">
     {% for post in site.posts %}
-      <article class="entry">
+      <article class="entry" data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}">
         <p class="meta">
           <span>{{ post.date | date: "%b %-d, %Y" | downcase }}</span>
           {% if post.reading_time %}
@@ -35,7 +54,7 @@ description: >-
           {% endif %}
           {% if post.tags and post.tags != empty %}
             <span class="dot">&middot;</span>
-            <span>{{ post.tags | join: ', ' }}</span>
+            <span class="entry-tags">{% for t in post.tags %}<a href="#{{ t | slugify }}">#{{ t }}</a>{% endfor %}</span>
           {% endif %}
         </p>
         <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>

@@ -152,6 +152,10 @@ img { max-width: 100%; height: auto; }
   scrollbar-color: var(--rule) transparent;
 }
 
+/* a flex column with a height cap will shrink its children to fit,
+   which flattens the portrait, so nothing in the rail may shrink */
+.rail > * { flex-shrink: 0; }
+
 .rail::-webkit-scrollbar { width: 6px; }
 .rail::-webkit-scrollbar-track { background: transparent; }
 .rail::-webkit-scrollbar-thumb {

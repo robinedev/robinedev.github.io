@@ -2,29 +2,35 @@
 layout: post
 title: "Hello world"
 description: >-
-  Why there's suddenly a blog here, and what I'm planning to put in it.
+  Why there's suddenly a blog here, what I'm building at the moment,
+  and what I'm hoping it turns into.
 date: 2026-01-01 09:00:00 -0500
-tags: []
-reading_time: "2 min read"
+tags: [homelab, learning]
+reading_time: "3 min read"
 ---
 
-> Draft notes, delete this block before you publish. Anything in square
-> brackets is yours to fill in or cut, and everything else is a starting
-> point you can keep, reword, or bin. To publish: move this file into
-> `_posts/`, rename it with the date in front like
-> `2026-03-14-hello-world.md`, match the date to the one in the front
-> matter, and fill in `tags:`.
+> Draft notes, delete this block before you publish. To publish: move
+> this file into `_posts/`, rename it with the date in front like
+> `2026-03-14-hello-world.md`, and match the date to the one in the
+> front matter above. Change anything here that doesn't sound like you.
 
-[Open with the moment that made you want this. Something like: last
-week I explained the same fix for the fourth time, and somewhere
-around the third I thought, this should be written down somewhere.] So, here we are.
+Nobody handed me a map for this job. I came into IT sideways, the way
+plenty of people do, and most of what I worked out early on I worked
+out by bumping into it. There are a lot of ways into this industry and
+hardly any of them are written down anywhere, so this is me writing
+some of mine down.
+
+The other half of the reason is practice. I've dabbled at making
+things for other people to read, I'd like to do more of it, and the
+only way I know to get better is to do it in public for a while and
+let it be rough at the start.
 
 I'm Aube. I do startup IT, mostly where device management meets
 identity, which in practice means endpoints, access, and the paperwork
-an audit asks for. I came up through a help desk queue at an MSP for
-law firms, got tired of doing the same task fifty times a month, and
-learned to script my way out of it. These days most of the job is
-automating the boring half so nobody has to do the same thing twice.
+an audit asks for. I started on a help desk at an MSP for law firms,
+got tired of doing the same task fifty times a month, and learned to
+script my way out of it. Most of the job now is automating the boring
+half so nobody has to do the same thing twice.
 
 ## What you'll find here
 
@@ -34,17 +40,20 @@ Three things, roughly.
 coverage skipped, and what it actually changes for anyone running a
 fleet.
 
-**Whatever I'm building.** The problem, the first thing I tried, why
-it didn't hold, and where it ended up. [Right now that's
-<the thing you're in the middle of>.]
+**Whatever I'm building.** Right now that's Okta, which I've seen
+everywhere for years and finally want to pull apart properly on
+something of my own. After that it's the homelab, plus TypeScript and
+Docker, and TypeScript mostly so I can get into Pulumi and do the
+infrastructure side as code. Expect some fairly basic posts while I
+figure all of that out, and I'm alright with that.
 
 **Notes from projects and events.** What I expected going in, what
 surprised me, and the one thing worth telling someone who's going next
 year.
 
-Some of it will be notes to myself that happen to be public, and I'm
-fine with that. The writing I've gotten the most out of was usually
-someone thinking out loud, not a polished guide.
+Some of it will be notes to myself that happen to be public. The
+writing I've gotten the most out of was usually someone thinking out
+loud, not a polished guide.
 
 ## What this won't be
 
@@ -59,5 +68,9 @@ rollout that went sideways, the
 always up for a tea chat, so there's a calendar link over on
 [contact]({{ '/doc/contact/' | relative_url }}) if you'd rather talk.
 
-[One closing line in your own words. Maybe something you'd like to be
-true about this blog a year from now.]
+Part of why this is public is accountability. The homelab has been
+sitting at "started" since August and it's nowhere near what I
+actually want it to be, and writing things down makes it harder to let
+them quietly drift. A year from now I'd like this to still be going,
+with a record of what I learned on the way, and maybe a post or two
+that saves someone else the afternoon I lost.

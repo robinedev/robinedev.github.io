@@ -1,0 +1,46 @@
+---
+layout: default
+title: Tags
+permalink: /doc/tags/
+description: Every tag on the blog, with the posts filed under each one.
+---
+
+<div class="page-head longform">
+  <h1>Tags</h1>
+  <p class="standfirst">
+    Everything I&rsquo;ve written, filed by subject. Pick one and see
+    what&rsquo;s under it.
+  </p>
+</div>
+
+{% assign tag_list = site.tags | sort %}
+{% if tag_list.size > 0 %}
+
+  <div class="tag-cloud">
+    {% for t in tag_list %}
+      <a class="tag-chip" href="#{{ t[0] | slugify }}">#{{ t[0] }}<span class="tag-count">{{ t[1] | size }}</span></a>
+    {% endfor %}
+  </div>
+
+  {% for t in tag_list %}
+    <section class="tag-group" id="{{ t[0] | slugify }}">
+      <div class="rule"></div>
+      <h2 class="tag-head">#{{ t[0] }}</h2>
+      <ul class="tag-posts">
+        {% for post in t[1] %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="tag-date">{{ post.date | date: "%b %-d, %Y" | downcase }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+
+{% else %}
+  {%- comment -%}
+    No posts yet, so there are no tags to file them under and a reader
+    sees just the heading. Tags come from the tags: line in each post's
+    front matter, and this page builds itself from them.
+  {%- endcomment -%}
+{% endif %}

@@ -1,13 +1,21 @@
 {%- comment -%}
   Inline SVG so it picks up the page colours instead of needing two
   exported images. Original artwork.
+
+  The dashed frame around everything is the point of the drawing: all
+  eight steps happen where you can see them, so nobody has to ask for
+  status. Edit the labels here and the figure reflows on its own.
 {%- endcomment -%}
 <div class="figure">
-  <svg viewBox="0 0 680 150" role="img" aria-labelledby="flow-t flow-d">
+  <svg viewBox="0 0 680 272" role="img" aria-labelledby="flow-t flow-d">
     <title id="flow-t">How a request moves</title>
     <desc id="flow-d">
-      A written request becomes a sketch we agree on, then an automated
-      change, then a written runbook that outlives the task.
+      Eight steps inside one tracked loop. First the ask is confirmed
+      back, the current setup is checked, success criteria are agreed
+      and the approach written up as an RFC. Then the work is tracked
+      in Jira, piloted with a few people, automated properly and
+      written into a runbook. The runbook feeds the next request. All
+      of it stays visible while it happens.
     </desc>
 
     <defs>
@@ -19,41 +27,81 @@
 
     <text x="0" y="14" class="fig-label">how a request moves</text>
 
-    <g>
-      <rect x="1" y="34" width="150" height="62" rx="2" fill="var(--sunk)"
-            stroke="var(--rule)" />
-      <text x="76" y="60" text-anchor="middle" class="fig-title">you send it</text>
-      <text x="76" y="78" text-anchor="middle" class="fig-sub">in writing</text>
-    </g>
-    <line x1="156" y1="65" x2="182" y2="65" stroke="var(--rule)" marker-end="url(#arw)" />
+    <rect x="1" y="26" width="678" height="236" rx="4" fill="var(--wash)"
+          stroke="var(--accent)" stroke-dasharray="4 4" />
+    <text x="16" y="45" class="fig-sub">
+      you can see all of it while it happens, tracked in Jira
+    </text>
 
     <g>
-      <rect x="187" y="34" width="150" height="62" rx="2" fill="var(--sunk)"
+      <rect x="30" y="56" width="146" height="58" rx="2" fill="var(--sunk)"
             stroke="var(--accent)" />
-      <text x="262" y="60" text-anchor="middle" class="fig-title">I sketch it back</text>
-      <text x="262" y="78" text-anchor="middle" class="fig-sub">boxes and arrows</text>
+      <text x="103" y="82" text-anchor="middle" class="fig-title">confirm the ask</text>
+      <text x="103" y="100" text-anchor="middle" class="fig-sub">back in my words</text>
     </g>
-    <line x1="342" y1="65" x2="368" y2="65" stroke="var(--rule)" marker-end="url(#arw)" />
+    <line x1="178" y1="85" x2="189" y2="85" stroke="var(--rule)" marker-end="url(#arw)" />
 
     <g>
-      <rect x="373" y="34" width="150" height="62" rx="2" fill="var(--sunk)"
+      <rect x="193" y="56" width="146" height="58" rx="2" fill="var(--sunk)"
             stroke="var(--rule)" />
-      <text x="448" y="60" text-anchor="middle" class="fig-title">we automate it</text>
-      <text x="448" y="78" text-anchor="middle" class="fig-sub">once, properly</text>
+      <text x="266" y="82" text-anchor="middle" class="fig-title">see what's there</text>
+      <text x="266" y="100" text-anchor="middle" class="fig-sub">gap analysis</text>
     </g>
-    <line x1="528" y1="65" x2="554" y2="65" stroke="var(--rule)" marker-end="url(#arw)" />
+    <line x1="341" y1="85" x2="352" y2="85" stroke="var(--rule)" marker-end="url(#arw)" />
 
     <g>
-      <rect x="559" y="34" width="120" height="62" rx="2" fill="var(--sunk)"
-            stroke="var(--leaf)" />
-      <text x="619" y="60" text-anchor="middle" class="fig-title">runbook</text>
-      <text x="619" y="78" text-anchor="middle" class="fig-sub">it outlives me</text>
+      <rect x="356" y="56" width="146" height="58" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="429" y="82" text-anchor="middle" class="fig-title">agree what done is</text>
+      <text x="429" y="100" text-anchor="middle" class="fig-sub">success criteria</text>
+    </g>
+    <line x1="504" y1="85" x2="515" y2="85" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="519" y="56" width="146" height="58" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="592" y="82" text-anchor="middle" class="fig-title">write it up</text>
+      <text x="592" y="100" text-anchor="middle" class="fig-sub">RFC, open to comment</text>
     </g>
 
-    <path d="M619 100 L619 122 Q619 130 611 130 L84 130 Q76 130 76 122 L76 102"
+    <path d="M592 114 V130 Q592 136 586 136 H109 Q103 136 103 142 V150"
+          fill="none" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="30" y="156" width="146" height="58" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="103" y="182" text-anchor="middle" class="fig-title">track it</text>
+      <text x="103" y="200" text-anchor="middle" class="fig-sub">in Jira, from day one</text>
+    </g>
+    <line x1="178" y1="185" x2="189" y2="185" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="193" y="156" width="146" height="58" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="266" y="182" text-anchor="middle" class="fig-title">pilot it small</text>
+      <text x="266" y="200" text-anchor="middle" class="fig-sub">a few people first</text>
+    </g>
+    <line x1="341" y1="185" x2="352" y2="185" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="356" y="156" width="146" height="58" rx="2" fill="var(--sunk)"
+            stroke="var(--rule)" />
+      <text x="429" y="182" text-anchor="middle" class="fig-title">automate it</text>
+      <text x="429" y="200" text-anchor="middle" class="fig-sub">once, properly</text>
+    </g>
+    <line x1="504" y1="185" x2="515" y2="185" stroke="var(--rule)" marker-end="url(#arw)" />
+
+    <g>
+      <rect x="519" y="156" width="146" height="58" rx="2" fill="var(--sunk)"
+            stroke="var(--leaf)" />
+      <text x="592" y="182" text-anchor="middle" class="fig-title">runbook</text>
+      <text x="592" y="200" text-anchor="middle" class="fig-sub">it outlives me</text>
+    </g>
+
+    <path d="M592 214 V230 Q592 236 586 236 H22 Q16 236 16 230 V91 Q16 85 22 85 L28 85"
           fill="none" stroke="var(--rule)" stroke-dasharray="3 4"
           marker-end="url(#arw)" />
-    <text x="348" y="146" text-anchor="middle" class="fig-sub">
+    <text x="348" y="252" text-anchor="middle" class="fig-sub">
       the next request starts from the doc
     </text>
   </svg>

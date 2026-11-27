@@ -9,13 +9,12 @@ description: >-
 
 # How to work with me
 
-Most people meet IT on their worst day. Something broke, access
-vanished, or the laptop showed up empty. The whole point of this job
-is that the day never arrives: you open the laptop, everything is
-already there, and IT stays a thing you never had to think about.
-
 This page is the shortcut, so nobody has to work me out by trial and
-error.
+error. How work reaches me, how it gets planned, how you hear about it
+while it's happening, and where I'll need a nudge.
+
+The one line version: nothing gets built before you have seen it
+written down.
 
 ## What happens when you send a request
 
@@ -96,9 +95,15 @@ wrong, not the person who ran it.
 
 ## Reaching me
 
-A ticket for anything with a deliverable, a message for a quick
-unblock, email for anything formal. Same working day, usually. If your
-thing has to wait, you will hear that, rather than hearing nothing.
+| channel | good for | you can expect |
+| --- | --- | --- |
+| Ticket | anything with a deliverable | same working day |
+| Chat | quick unblocks, "is this normal?" | a few hours |
+| Email | external, formal, anything with a paper trail | a day or two |
+| Meeting | decisions, conflict, onboarding, demos | happy to, with an agenda and a written recap after |
+
+If your thing has to wait, you will hear that from me, rather than
+hearing nothing.
 
 ## The short version
 

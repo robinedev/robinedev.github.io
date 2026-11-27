@@ -2,11 +2,10 @@
 layout: post
 title: "Hello world"
 description: >-
-  Why there's suddenly a blog here, what I'm building at the moment,
-  and what I'm hoping it turns into.
+  Why there's suddenly a blog here, and what's going in it.
 date: 2026-01-01 09:00:00 -0500
 tags: [homelab, learning]
-reading_time: "3 min read"
+reading_time: "2 min read"
 ---
 
 > Draft notes, delete this block before you publish. To publish: move
@@ -14,38 +13,27 @@ reading_time: "3 min read"
 > `2026-03-14-hello-world.md`, and match the date to the one in the
 > front matter above. Change anything here that doesn't sound like you.
 
-Nobody handed me a map for this job. I came into IT sideways, the way
-plenty of people do, and most of what I worked out early on I worked
-out by bumping into it. There are a lot of ways into this industry and
-hardly any of them are written down anywhere, so this is me writing
-some of mine down.
+Nobody handed me a map for this job, and I don't think many people get
+one. There are a lot of ways into IT and hardly any of them are
+written down anywhere, so this is somewhere to write a few of them
+down.
 
-The other half of the reason is practice. I've dabbled at making
-things for other people to read, I'd like to do more of it, and the
-only way I know to get better is to do it in public for a while and
-let it be rough at the start.
-
-I'm Aube. I do startup IT, mostly where device management meets
-identity, which in practice means endpoints, access, and the paperwork
-an audit asks for. I started on a help desk at an MSP for law firms,
-got tired of doing the same task fifty times a month, and learned to
-script my way out of it. Most of the job now is automating the boring
-half so nobody has to do the same thing twice.
+The rest of it is practice. Getting better at explaining things seems
+to only happen in public, badly, for a while first.
 
 ## What you'll find here
 
 Three things, roughly.
 
-**Tech news I've got opinions about.** What got announced, what the
-coverage skipped, and what it actually changes for anyone running a
-fleet.
+**Tech news worth an opinion.** What got announced, what the coverage
+skipped, and what it actually changes for anyone running a fleet.
 
-**Whatever I'm building.** Right now that's Okta, which I've seen
-everywhere for years and finally want to pull apart properly on
-something of my own. After that it's the homelab, plus TypeScript and
-Docker, and TypeScript mostly so I can get into Pulumi and do the
-infrastructure side as code. Expect some fairly basic posts while I
-figure all of that out, and I'm alright with that.
+**Whatever's being built at the moment.** Right now that's Okta, which
+turns up everywhere and is worth pulling apart properly on a project
+of my own. After that the homelab, plus TypeScript and Docker,
+TypeScript mainly as a way into Pulumi and doing the infrastructure
+side as code. Expect some basic posts while all of that gets figured
+out.
 
 **Notes from projects and events.** What I expected going in, what
 surprised me, and the one thing worth telling someone who's going next
@@ -62,15 +50,15 @@ I haven't done myself.
 
 ## Come say something
 
-If you've got a correction, a post request, or a war story about a
-rollout that went sideways, the
-[guestbook]({{ '/doc/guestbook/' | relative_url }}) is open. I'm also
-always up for a tea chat, so there's a calendar link over on
-[contact]({{ '/doc/contact/' | relative_url }}) if you'd rather talk.
+Corrections, post requests, and war stories about a rollout that went
+sideways are all welcome in the
+[guestbook]({{ '/doc/guestbook/' | relative_url }}). There's a
+calendar link over on
+[contact]({{ '/doc/contact/' | relative_url }}) too, if a tea chat is
+more your thing.
 
 Part of why this is public is accountability. The homelab has been
-sitting at "started" since August and it's nowhere near what I
-actually want it to be, and writing things down makes it harder to let
-them quietly drift. A year from now I'd like this to still be going,
-with a record of what I learned on the way, and maybe a post or two
-that saves someone else the afternoon I lost.
+sitting at "started" since August and it's nowhere near where it
+should be, and writing things down makes it harder to let them drift
+quietly. A year from now I'd like there to be a record of what got
+learned here, and maybe a post that saves someone else an afternoon.
